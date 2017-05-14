@@ -41,14 +41,14 @@ namespace PageObject3.Pages
         return new UserNamePage(driver);
     }
 
-        public AddEmployeePage GoToClickOnEditEmployeeButton()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new AddEmployeePage(driver);
-        }
+    //public AddEmployeePage GoToClickOnEditEmployeeButton()
+    //    {
+    //        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    //        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    //        return new AddEmployeePage(driver);
+    //    }
 
-        public UserMessagePage GoToUserMessagePage()
+    public UserMessagePage GoToUserMessagePage()
     {
         WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
         WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
@@ -83,7 +83,14 @@ namespace PageObject3.Pages
         return new EditEmployeePage(driver);
     }
 
-        public void GetEmployeeData()
+    public AddEmployeePage GoToEmployeePage()
+    {
+        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+        return new AddEmployeePage(driver);
+    }
+
+    public void GetEmployeeData()
     {
     foreach (IWebElement element in driver.FindElements(By.CssSelector("td.tdName")))
     Console.WriteLine("{0}", element.Text);

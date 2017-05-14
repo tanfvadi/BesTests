@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddEmployeePage.cs" />
     <Compile Include="Pages\EditEmployeePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
     <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />

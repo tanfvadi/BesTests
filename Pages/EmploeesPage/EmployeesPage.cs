@@ -5,34 +5,16 @@ using System.Collections.Generic;
 
 namespace PageObject3.Pages
 {
-  public class AddEmployeePage:BasePage
+  public class EmployeePage:BasePage
   {
         private IWebElement rowWebElement;
 
+        public EmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
+        {
+        }
         //protected new IWebDriver driver;
         // private By PageVerifierLocator;
         // public List<EmployeeRow> EmployeeRows;
-
-        public AddEmployeePage(IWebDriver driver) : base(driver, By.CssSelector(".utilities-employees-main"), 10)
-        {
-        }
-
-
-        //public EmployeesPage(IWebDriver driver)
-        //{
-        //    this.driver = driver;
-        //}
-
-        //public EmployeesPage(IWebElement rowWebElement, IWebDriver driver)
-        //{
-        //    this.rowWebElement = rowWebElement;
-        //    this.driver = driver;
-        //}
-
-        //public EmployeesPage(IWebDriver driver)
-        //{
-        //    this.driver = driver;
-        //}
 
         public void TeachersFilter()
         {
