@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\vadim.t.ECB\Documents\Visual Studio 2015\Projects\PageObject3\PageObject3\bin\Debug\PageObject3.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B0261A3-A448-49E3-AA8A-C5639CDC2408}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>PageObject3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>PageObject3</RootNamespace>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\EditEmployeePage.cs" />
+    <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
+    <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />
+    <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
+    <Compile Include="Tests\AddEmployeeTest.cs" />
+    <Compile Include="Tests\AddLeadTest.cs" />
+    <Compile Include="Tests\AlertTests.cs" />
+    <Compile Include="Tests\BesTestsBase.cs" />
+    <Compile Include="Tests\CancelMeetingTests.cs" />
+    <Compile Include="Tests\GetEmployeeDataTest.cs" />
+    <Compile Include="Tests\SubTeacherTests.cs" />
+    <Compile Include="Tests\TransferTests.cs" />
+    <Compile Include="Tests\NotificationTests.cs" />
+    <Compile Include="Tests\SaleTests.cs" />
+    <Compile Include="Tests\SetupMeettingTests.cs" />
+    <Compile Include="Tests\WrongUsernameTest.cs" />
+    <Compile Include="Tests\ForgotPasswordTests.cs" />
+    <Compile Include="Tests\CustomerPageTests.cs" />
+    <Compile Include="Tests\LoginPageTests.cs" />
+    <Compile Include="Pages\EmploeesPage\EmployeeRowPage.cs" />
+    <Compile Include="Pages\EmploeesPage\UserRolePage.cs" />
+    <Compile Include="Pages\EmploeesPage\EmployeesPage.cs" />
+    <Compile Include="Pages\AddLeadPage.cs" />
+    <Compile Include="Pages\Alerts\AlertSummary.cs" />
+    <Compile Include="Pages\BesHomePage.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\Alerts\AlertPage.cs" />
+    <Compile Include="Pages\Meetings\CancelMeetingPage.cs" />
+    <Compile Include="Pages\Sales\CancelSalePage.cs" />
+    <Compile Include="Pages\NotificationPage.cs" />
+    <Compile Include="Pages\NotOnExpectedPageException.cs" />
+    <Compile Include="Pages\Sales\PaymentPage.cs" />
+    <Compile Include="Pages\Sales\SaleCoursesPage.cs" />
+    <Compile Include="Pages\Sales\SaleSummary.cs" />
+    <Compile Include="Pages\Meetings\SetupMeetingPage.cs" />
+    <Compile Include="Pages\TransferPage.cs" />
+    <Compile Include="Pages\ForgotPasswordPage.cs" />
+    <Compile Include="Pages\CustomerPage.cs" />
+    <Compile Include="Pages\DiaryLog.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Selenium.WebDriver.ChromeDriver.2.29.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.2.29.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.2.29.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.2.29.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+</Project>
