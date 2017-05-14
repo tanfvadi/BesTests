@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace PageObject3.Pages
 {
@@ -26,15 +27,15 @@ namespace PageObject3.Pages
         }
         public AddEmployeePage FillNewEmployeeAndSave()
         {
-            WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-add-btnt']"), 10).Click();
+            WaitForElement(By.CssSelector(".btn.button-59.utilities-employees-add-btn"), 10).Click();
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-first-name']"), 10).SendKeys("Vadim");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-last-name']"), 10).SendKeys("Test");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-password']"), 10).SendKeys("12345");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-email']"), 10).SendKeys("vadim@ecb.com");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-cellphone  digits-only']"), 10).SendKeys("037936677");
-            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all input-invalid' and ttle='Arabic']"))).SelectByIndex(0);
-            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']"))).SelectByIndex(0);
-            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all input-invalid' and ttle='Select Branches']"))).SelectByIndex(0);
+            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all' and title='Select Language']"))).SelectByIndex(1);
+            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all' and title='Select Roles']"))).SelectByIndex(0);
+            new SelectElement(WaitForElement(By.XPath("//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all' and ttle='Select Branches']"))).SelectByIndex(0);
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
             return new AddEmployeePage(driver);
         }
