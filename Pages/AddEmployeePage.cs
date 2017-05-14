@@ -8,22 +8,22 @@ using OpenQA.Selenium.Support.UI;
 
 namespace PageObject3.Pages
 {
-    public class AddEmployeePage : BasePage
+    public class AddEmployeePage:BasePage
     {
-        public AddEmployeePage(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
-
-
-        public AddEmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
-        {
-        }
-
-        //public AddEmployeePage(IWebDriver driver): base(driver, By.XPath("//div[@class='utilities-employees-header']"), 10)
+        //public AddEmployeePage(IWebDriver driver)
         //{
-
+        //    this.driver = driver;
         //}
+
+
+        //public AddEmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
+        //{
+        //}
+
+        public AddEmployeePage(IWebDriver driver) : base(driver, By.XPath("//div[@class='utilities-employees-header']"), 10)
+        {
+
+        }
         public AddEmployeePage FillNewEmployeeAndSave()
         {
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-add-btnt']"), 10).Click();

@@ -7,7 +7,7 @@ namespace PageObject3.Pages
 {
   public class EmployeePage:BasePage
   {
-        private IWebElement rowWebElement;
+        //private IWebElement rowWebElement;
 
         public EmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
         {
