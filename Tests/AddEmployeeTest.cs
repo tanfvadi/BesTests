@@ -10,10 +10,14 @@ namespace PageObject3.Tests
     [TestClass]
     public class AddEmployeeTest : BesTestsBase
     {
+        public string chars;
+
         [TestMethod]
         public void AddEmployee()
         {
-            LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave();
+           // LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave();
+            LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave("Rami");
+
         }
     }
 }
