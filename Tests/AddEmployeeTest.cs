@@ -15,8 +15,8 @@ namespace PageObject3.Tests
         [TestMethod]
         public void AddEmployee()
         {
-           // LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave();
-            LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave("Rami");
+            LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave();
+            //LoginAndGoToHome().GoToEmployeePage().FillNewEmployeeAndSave("Rami");
 
         }
     }

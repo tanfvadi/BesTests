@@ -14,7 +14,7 @@ namespace PageObject3.Tests
     [TestMethod]
     public void AddLead()
     {
-            LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().RedFrameId();
+     LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().RedFrameId();
     }
   }
 }

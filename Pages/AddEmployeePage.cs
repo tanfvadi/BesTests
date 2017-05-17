@@ -12,23 +12,6 @@ namespace PageObject3.Pages
     public class AddEmployeePage:BasePage
     {
 
-
-        //public void RandomGenerate()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
-        //public AddEmployeePage(IWebDriver driver)
-        //{
-        //    this.driver = driver;
-        //}
-
-
-        //public AddEmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
-        //{
-        //}
-
         public AddEmployeePage(IWebDriver driver) : base(driver, By.XPath("//div[@class='utilities-employees-header']"), 10)
         {
 
@@ -52,15 +35,19 @@ namespace PageObject3.Pages
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-password']"), 10).SendKeys("12345");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-email']"), 10).SendKeys(username + "@ecb.com");
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-cellphone  digits-only']"), 10).SendKeys("037936677");
+
             WaitForElement(By.CssSelector(".utilities-employees-popup-info.utilities-employees-popup-info-mothertongue")).Click();
-            //Thread.Sleep(1000);
-            new SelectElement(WaitForElement(By.CssSelector(".utilities-employees-popup-select.utilities-employees-popup-mothertongue"))).SelectByIndex(1);
-            WaitForElement(By.CssSelector(".utilities-employees-popup-roles")).Click();
-            new SelectElement(WaitForElement(By.XPath(".utilities-employees-popup-roles"))).SelectByIndex(1);
-            WaitForElement(By.CssSelector(".utilities-employees-popup-branches")).Click();
-            new SelectElement(WaitForElement(By.XPath(".utilities-employees-popup-branches"))).SelectByIndex(1);
+            new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-popup-select utilities-employees-popup-mothertongue']"))).SelectByIndex(1);
+
+            WaitForElement(By.CssSelector(".utilities-employees-popup-info.utilities-employees-popup-info-roles")).Click();
+            new SelectElement(WaitForElement(By.XPath("//div[@class='utilities-employees-popup-roles']"))).SelectByIndex(1);
+
+            WaitForElement(By.CssSelector(".utilities-employees-popup-all-branches ")).Click();
+            new SelectElement(WaitForElement(By.CssSelector(".ui-multiselect.ui-widget.ui-state-default.ui-corner-all"))).SelectByIndex(1);
+
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
             return new AddEmployeePage(driver);
+
         }     
     }
 }

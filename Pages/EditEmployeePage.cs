@@ -21,7 +21,6 @@ namespace PageObject3
         WaitForElement(By.CssSelector("[data-id='122169']"), 10).Click();
         WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Click();
         WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).SendKeys("va");
-        //Thread.Sleep(3000);
         WaitForElement(By.XPath("//a[contains(@id,'ui-id') and text()='Vadim Teacher']"), 10).Click();
         WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn' and text()='Save']"), 10).Click();
         return new EditEmployeePage(driver);
@@ -29,15 +28,13 @@ namespace PageObject3
 
     public EditEmployeePage DeleteSubTeachers()
     {
-            WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10).Click();
-            new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10)).SelectByIndex(12);
-            WaitForElement(By.CssSelector("[data-id='122169']"), 10).Click();
-            Thread.Sleep(3000);
-           // WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Click();
-           // WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Clear();
-            // WaitForElement(By.CssSelector("div.substitute-teacher-btn-itm.substitute-teacher-row-delete-btn")).Click();
-            var element=WaitForElement(By.Id("substitute-teacher-row")).FindElements(By.ClassName("substitute-teacher-btn-itm.substitute-teacher-row-delete-btn"));
-            return new EditEmployeePage(driver);     
+        WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10).Click();
+        new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10)).SelectByIndex(12);
+        WaitForElement(By.CssSelector("[data-id='122169']"), 10).Click();
+        WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Click();
+        WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Clear();
+        WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']"), 10).Click();
+        return new EditEmployeePage(driver);     
     }
   }
 }
