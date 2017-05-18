@@ -13,24 +13,27 @@ namespace PageObject3.Pages
         private IWebDriver driver;
         public string Branch;
         public IWebElement rowElement;
-
-        //public UserBranchPage(IWebElement rowElement, IWebDriver driver)
-        //{
-        //    this.rowElement = rowElement;
-        //    this.driver = driver;
-        //}
+        private IWebElement rowWebElement;
+        public EmployeeUserBranch UserBranch { get; internal set; }
 
         public UserBranchPage(IWebDriver driver)
         {
             this.driver = driver;
         }
 
+        public UserBranchPage(IWebElement rowWebElement, IWebDriver driver)
+        {
+            this.rowWebElement = rowWebElement;
+            this.driver = driver;
+        }
+
         public void GetBranchesFromEmployeesPage()
         {
             Thread.Sleep(1000);
-            foreach (IWebElement element in driver.FindElements(By.CssSelector("div.utilities-employees-table-branches")))
-            if (element.Text.Contains("Jerusalem"))
-            Console.WriteLine("{0}", element.Text);
+            IList<IWebElement> all = driver.FindElements(By.CssSelector("div.utilities-employees-table-branches"));
+            foreach (IWebElement element in all)
+                if (element.Text.Contains("Petah Tikva"))
+                Console.WriteLine("{0}", element.Text);
         }
 
         public enum EmployeeUserBranch

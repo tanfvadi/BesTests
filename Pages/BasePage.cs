@@ -75,6 +75,7 @@ namespace PageObject3.Pages
       else
         new SelectElement(WaitForElement(By.Id("assignee"), 10)).SelectByIndex(6);
     }
+
     protected void WaitUntilElementNotVisible(By by, int timeoutInSec = 10, string messageIfFailed = null)
     {
             Wait(timeoutInSec, messageIfFailed).Until<bool>(ExpectedConditions.InvisibilityOfElementLocated(by));
@@ -85,7 +86,7 @@ namespace PageObject3.Pages
       string messageIfFailed = "Page: " + PageName + " was not loaded!!";
       try
       {
-                Wait(timeoutInSec, messageIfFailed).Until(ExpectedConditions.ElementIsVisible(PageVerifierLocator));
+            Wait(timeoutInSec, messageIfFailed).Until(ExpectedConditions.ElementIsVisible(PageVerifierLocator));
       }
       catch (WebDriverTimeoutException ex)
       {

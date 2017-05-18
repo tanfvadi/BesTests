@@ -3,6 +3,8 @@ using PageObject3.Pages;
 using System;
 using System.Linq;
 using static PageObject3.Pages.BasePage;
+using static PageObject3.Pages.CustomerPage;
+using static PageObject3.Pages.UserBranchPage;
 using static PageObject3.Pages.UserRolePage;
 
 namespace PageObject3.Tests
@@ -18,43 +20,42 @@ namespace PageObject3.Tests
     [TestMethod]
     public void GetNamesFromEmployeesPage()
     {
-            LoginAndGoToHome().GoToUserNamePage().GetNamesFromEmployeesPage();
+      LoginAndGoToHome().GoToUserNamePage().GetNamesFromEmployeesPage();
     }
     [TestMethod]
     public void SelectAllMessages()
     {
-            LoginAndGoToHome().GoToUserMessagePage().SelectAllMessages();
+      LoginAndGoToHome().GoToUserMessagePage().SelectAllMessages();
     }
 
     [TestMethod]
     public void GetRolesFromEmployeesPage()
     {
-           LoginAndGoToHome().GoToUserRolePage().SelectRoles();
-
-            //UserRolePage role = LoginAndGoToHome().GoToUserRolePage().SelectRoles();
-            //Assert.AreEqual(role.UserRole.Equals<UserRolePage>(a => a.UserRole == EmployeeUserRole.Manager));
-
-            //CustomerPage lead = LoginAndCreateLead();
-            //lead.GoToNewSale().SelectCourseAndGoToPaymentPage().SelectPaymentAndCompleteSale();
-            //Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.Sale));
+       //LoginAndGoToHome().GoToUserRolePage().SelectRoles();
+       BesHomePage role = LoginAndGoToHome();
+       role.GoToUserRolePage().SelectRoles();
+       Assert.IsTrue(role.UserRole.Any<UserRolePage>(a => a.UserRole == EmployeeUserRole.Manager));
     }
 
     [TestMethod]
     public void GetBranchesFromEmployeesPage()
     {
-           LoginAndGoToHome().GoToUserBranchPage().GetBranchesFromEmployeesPage();
+      //LoginAndGoToHome().GoToUserBranchPage().GetBranchesFromEmployeesPage();
+      BesHomePage branch = LoginAndGoToHome();
+      branch.GoToUserBranchPage().GetBranchesFromEmployeesPage();
+      Assert.IsTrue(branch.UserBranch.Any<UserBranchPage>(a => a.UserBranch==EmployeeUserBranch.PetahTikva));
     }
 
     [TestMethod]
     public void GetRowsFromEmployeesPage()
     {
-           LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
     }
 
     [TestMethod]
     public void TeachersFilter()
     {
-        LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
     }
 
     //[TestMethod]

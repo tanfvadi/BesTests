@@ -23,8 +23,9 @@ namespace PageObject3.Pages
         public void GetNamesFromEmployeesPage()
         {
             Thread.Sleep(1000);
-            foreach (IWebElement element in driver.FindElements(By.CssSelector("td.utilities-employees-table-employee-name")))
-                if (element.Text.Contains("Diana"))
+            IList<IWebElement> all = driver.FindElements(By.CssSelector("td.utilities-employees-table-employee-name"));
+            foreach (IWebElement element in all)
+            if (element.Text.Contains("Diana"))
             Console.WriteLine("{0}", element.Text);
         }
     }

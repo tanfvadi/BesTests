@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using PageObject3.Pages;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PageObject3.Pages
 {
@@ -30,7 +32,7 @@ namespace PageObject3.Pages
 
     public AddLeadPage GoToAddLead()
     {
-            WaitForElement(By.Id("btn-new-customer"), 10).Click();
+      WaitForElement(By.Id("btn-new-customer"), 10).Click();
       return new AddLeadPage(driver);
     }
 
@@ -55,39 +57,55 @@ namespace PageObject3.Pages
         return new UserMessagePage(driver);
     }
 
+    public List<UserRolePage> UserRole
+    {
+        get
+        {
+            return WaitForElements(By.XPath("//div[@class='utilities-employees-table-roles']"), 10).Select<IWebElement, UserRolePage>(rowWebElement => new UserRolePage(rowWebElement, driver)).ToList<UserRolePage>();
+        }
+    }
+
+    public List<UserBranchPage> UserBranch
+    {
+        get
+        {
+           return WaitForElements(By.XPath("//div[@class='utilities-employees-table-branches']"), 10).Select<IWebElement, UserBranchPage>(rowWebElement => new UserBranchPage(rowWebElement, driver)).ToList<UserBranchPage>();
+        }
+    }
+
     public UserRolePage GoToUserRolePage()
     {
-        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        return new UserRolePage(driver);
+    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    return new UserRolePage(driver);
     }
 
     public UserBranchPage GoToUserBranchPage()
     {
-        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        return new UserBranchPage(driver);
+    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    return new UserBranchPage(driver);
     }
 
     public EmployeeRowPage GoToEmployeeRowPage()
     {
-        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        return new EmployeeRowPage(driver);
+    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    return new EmployeeRowPage(driver);
     }
 
     public EditEmployeePage GoToEditEmployeePage()
     {
-        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        return new EditEmployeePage(driver);
+    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    return new EditEmployeePage(driver);
     }
 
     public AddEmployeePage GoToEmployeePage()
     {
-        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        return new AddEmployeePage(driver);
+    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+    return new AddEmployeePage(driver);
     }
 
     public void GetEmployeeData()

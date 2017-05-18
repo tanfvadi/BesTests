@@ -47,7 +47,6 @@ namespace PageObject3.Pages
 
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
             return new AddEmployeePage(driver);
-
         }     
     }
 }
