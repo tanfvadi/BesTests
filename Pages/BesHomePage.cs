@@ -4,6 +4,7 @@ using PageObject3.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace PageObject3.Pages
 {
@@ -111,7 +112,15 @@ namespace PageObject3.Pages
     return new EmployeeRowPage(driver);
     }
 
-    public EditEmployeePage GoToEditEmployeePage()
+    public EmployeeRowPage GetFirstRow()
+    {
+        Thread.Sleep(1000);
+        IWebElement first = driver.FindElement(By.CssSelector("tr.utilities-employees-table-tr"));
+        Console.WriteLine(first.Text);
+        return new EmployeeRowPage(driver);
+    }
+
+        public EditEmployeePage GoToEditEmployeePage()
     {
     WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
     WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();

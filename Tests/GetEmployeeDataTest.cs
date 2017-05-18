@@ -52,23 +52,17 @@ namespace PageObject3.Tests
     [TestMethod]
     public void GetRowsFromEmployeesPage()
     {
-      //LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
 
-      BesHomePage row = LoginAndGoToHome();
-      row.GoToEmployeeRowPage().GetFirstRow();
+      //BesHomePage row = LoginAndGoToHome();
+      //     row.GoToEmployeeRowPage().GetRowsFromEmployeesPage();
       //Assert.IsTrue(row.UserRole.Any<UserRolePage>(a => a.UserRole==EmployeeUserRole.Teacher));
     }
 
     [TestMethod]
-    public void TeachersFilter()
+    public void FirstTeacherRowAndEdit()
     {
-      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+      LoginAndGoToHome().GoToEmployeeRowPage().TeacherFilterAndEdit();
     }
-
-    //[TestMethod]
-    //public void EditEmployee()
-    //{
-    //        LoginAndGoToHome().GoToClickOnEditEmployeeButton().ClickOnEditEmployeeButton();
-    //}
-    }
+  }
 }
