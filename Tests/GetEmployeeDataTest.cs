@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObject3.Pages;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using static PageObject3.Pages.BasePage;
 using static PageObject3.Pages.CustomerPage;
@@ -21,7 +22,9 @@ namespace PageObject3.Tests
     public void GetNamesFromEmployeesPage()
     {
       LoginAndGoToHome().GoToUserNamePage().GetNamesFromEmployeesPage();
+
     }
+
     [TestMethod]
     public void SelectAllMessages()
     {
@@ -43,13 +46,17 @@ namespace PageObject3.Tests
       //LoginAndGoToHome().GoToUserBranchPage().GetBranchesFromEmployeesPage();
       BesHomePage branch = LoginAndGoToHome();
       branch.GoToUserBranchPage().GetBranchesFromEmployeesPage();
-      Assert.IsTrue(branch.UserBranch.Any<UserBranchPage>(a => a.UserBranch==EmployeeUserBranch.PetahTikva));
+      Assert.IsTrue(branch.UserBranch.Any<UserBranchPage>(a => a.UserBranch == EmployeeUserBranch.PetahTikva));
     }
 
     [TestMethod]
     public void GetRowsFromEmployeesPage()
     {
-      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+      //LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+
+      BesHomePage row = LoginAndGoToHome();
+      row.GoToEmployeeRowPage().GetFirstRow();
+      //Assert.IsTrue(row.UserRole.Any<UserRolePage>(a => a.UserRole==EmployeeUserRole.Teacher));
     }
 
     [TestMethod]

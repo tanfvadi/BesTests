@@ -57,21 +57,38 @@ namespace PageObject3.Pages
         return new UserMessagePage(driver);
     }
 
-    public List<UserRolePage> UserRole
-    {
-        get
+        public List<UserRolePage> UserRole
         {
-            return WaitForElements(By.XPath("//div[@class='utilities-employees-table-roles']"), 10).Select<IWebElement, UserRolePage>(rowWebElement => new UserRolePage(rowWebElement, driver)).ToList<UserRolePage>();
+            get
+            {
+                return WaitForElements(By.XPath("//div[@class='utilities-employees-table-roles']"), 10).Select<IWebElement, UserRolePage>(rowWebElement => new UserRolePage(rowWebElement, driver)).ToList<UserRolePage>();
+            }
         }
-    }
 
-    public List<UserBranchPage> UserBranch
+        public List<UserBranchPage> UserBranch
     {
         get
         {
            return WaitForElements(By.XPath("//div[@class='utilities-employees-table-branches']"), 10).Select<IWebElement, UserBranchPage>(rowWebElement => new UserBranchPage(rowWebElement, driver)).ToList<UserBranchPage>();
         }
     }
+
+    public List<UserNamePage> UserName
+    {
+       get
+       {
+          return WaitForElements(By.XPath("//div[@class='utilities-employees-table-employee-name']"), 10).Select(rowWebElement => new PageObject3.Pages.UserNamePage(driver)).ToList<PageObject3.Pages.UserNamePage>();
+       }
+    }
+
+        //public List<UserNamePage> UserName
+        //{
+        //    get
+        //    {
+        //        return UserName.Where<UserNamePage>(a => a.Name == UserName.).ToList<DiaryLog>();
+        //    }
+        //}
+
 
     public UserRolePage GoToUserRolePage()
     {

@@ -23,8 +23,8 @@ namespace PageObject3.Pages
         public void GetNamesFromEmployeesPage()
         {
             Thread.Sleep(1000);
-            IList<IWebElement> all = driver.FindElements(By.CssSelector("td.utilities-employees-table-employee-name"));
-            foreach (IWebElement element in all)
+            IList<IWebElement> names = driver.FindElements(By.CssSelector("td.utilities-employees-table-employee-name"));
+            foreach (IWebElement element in names)
             if (element.Text.Contains("Diana"))
             Console.WriteLine("{0}", element.Text);
         }

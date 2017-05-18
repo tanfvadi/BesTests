@@ -22,8 +22,8 @@ namespace PageObject3.Pages
          new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10)).SelectByIndex(12);
         }
 
-    public void ClickEdit()
-    {
-    }
+        public void ClickEdit()
+        {
+        }
   }
 }

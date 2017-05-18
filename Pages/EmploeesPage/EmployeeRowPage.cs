@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace PageObject3.Pages
 {
-  public class EmployeeRowPage : BasePage
+  public class EmployeeRowPage : EmployeePage
   {
     public EmployeeRowPage(IWebDriver driver)
     : base(driver, By.XPath("//div[@class='utilities-employees-header']"))
@@ -15,21 +15,14 @@ namespace PageObject3.Pages
     }
 
 
-    public List<PageObject3.Pages.UserMessagePage> UserMessage
-    {
-      get
-      {
-        return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, PageObject3.Pages.UserMessagePage>(rowWebElement => new PageObject3.Pages.UserMessagePage(rowWebElement, driver)).ToList<PageObject3.Pages.UserMessagePage>();
-      }
-    }
-  
-    public List<PageObject3.Pages.UserNamePage> UserName
+    public List<UserMessagePage> UserMessage
     {
         get
         {
-         return WaitForElements(By.XPath("//div[@class='utilities-employees-table-employee-name']"), 10).Select(rowWebElement => new PageObject3.Pages.UserNamePage(driver)).ToList<PageObject3.Pages.UserNamePage>();
+          return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, PageObject3.Pages.UserMessagePage>(rowWebElement => new PageObject3.Pages.UserMessagePage(rowWebElement, driver)).ToList<PageObject3.Pages.UserMessagePage>();
         }
     }
+  
 
     //public List<PageObject3.Pages.EmployeesPage> UserEdit
     //{
@@ -46,5 +39,12 @@ namespace PageObject3.Pages
         if (element.Text.Contains("Diana"))
         Console.WriteLine(element.Text + Environment.NewLine + "-------------------------------------------");
     }
+    public void GetFirstRow()
+    {
+        Thread.Sleep(1000);
+        IWebElement first = driver.FindElement(By.CssSelector("tr.utilities-employees-table-tr"));
+        Console.WriteLine(first.Text);
+    }
+
   }
 }
