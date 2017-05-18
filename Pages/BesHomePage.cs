@@ -120,7 +120,7 @@ namespace PageObject3.Pages
         return new EmployeeRowPage(driver);
     }
 
-        public EditEmployeePage GoToEditEmployeePage()
+    public EditEmployeePage GoToEditEmployeePage()
     {
     WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
     WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
