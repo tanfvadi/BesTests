@@ -62,7 +62,14 @@ namespace PageObject3.Tests
     [TestMethod]
     public void FirstTeacherRowAndEdit()
     {
-      LoginAndGoToHome().GoToEmployeeRowPage().TeacherFilterAndEdit();
+      LoginAndGoToHome().GoToEmployeeRowPage().TeacherAndBranchFilterAndEditFirstRow();
+            
+    }
+
+    [TestMethod]
+    public void GetFirstRow()
+    {
+     LoginAndGoToHome().GoToEmployeeRowPage().GetFirstRow();
     }
   }
 }

@@ -11,6 +11,7 @@ namespace PageObject3.Pages
     protected IWebDriver driver;
     private By PageVerifierLocator;
 
+
     protected string PageName
     {
       get

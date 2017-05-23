@@ -1,30 +1,36 @@
 ﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace PageObject3.Pages
 {
-  public class EmployeePage:BasePage
+  public class EmployeesPage:BasePage
   {
-        private IWebElement rowWebElement;
+        //public new IWebDriver driver;
+        public IWebElement rowWebElement;
 
-        //private IWebElement rowWebElement;
-
-        public EmployeePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
+        public EmployeesPage(IWebDriver driver)
         {
+            this.driver = driver;
         }
+ 
 
-        //public EmployeePage(IWebElement rowWebElement, IWebDriver driver)
+        //public EmployeesPage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
         //{
-        //    this.rowWebElement = rowWebElement;
-        //    this.driver = driver;
         //}
 
-        //protected new IWebDriver driver;
-        // private By PageVerifierLocator;
-        // public List<EmployeeRow> EmployeeRows;
 
 
-  }
+        public void GetFirstRow()
+        {
+            Thread.Sleep(1000);
+            IWebElement first = driver.FindElement(By.CssSelector("tr.utilities-employees-table-tr"));
+            Console.WriteLine(first.Text);
+        }
+      
+    }
 }

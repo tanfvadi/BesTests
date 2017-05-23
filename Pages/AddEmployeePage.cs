@@ -37,7 +37,8 @@ namespace PageObject3.Pages
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-cellphone  digits-only']"), 10).SendKeys("037936677");
 
             WaitForElement(By.CssSelector(".utilities-employees-popup-info.utilities-employees-popup-info-mothertongue")).Click();
-            new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-popup-select utilities-employees-popup-mothertongue']"))).SelectByIndex(1);
+            //new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-popup-select utilities-employees-popup-mothertongue']"))).SelectByIndex(1);
+            WaitForElement(By.XPath("//label[@class='ui-multiselect-1-0-option-0' and title ='Arabic']")).Click();
 
             WaitForElement(By.CssSelector(".utilities-employees-popup-info.utilities-employees-popup-info-roles")).Click();
             new SelectElement(WaitForElement(By.XPath("//div[@class='utilities-employees-popup-roles']"))).SelectByIndex(1);
