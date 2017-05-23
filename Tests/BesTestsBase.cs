@@ -63,10 +63,10 @@ namespace PageObject3.Tests
                 //Save the screenshot
                 ss.SaveAsFile("C:/Users/vadim.t.ECB/Localexplorer.jpeg", ScreenshotImageFormat.Jpeg);
             }
-            //if (this.TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
-            //{
-            //    driver.Quit();
-            //}
+            if (this.TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
+            {
+                driver.Quit();
+            }
 
         }
 

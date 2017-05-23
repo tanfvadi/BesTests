@@ -10,7 +10,7 @@ namespace PageObject3.Pages
 {
     public class UserMessagePage
     {
-        public IWebDriver driver;
+        private new IWebDriver driver;
         public bool Message;
         public IWebElement rowElement;
         private IWebElement rowWebElement;

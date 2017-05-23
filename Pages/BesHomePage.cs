@@ -112,6 +112,14 @@ namespace PageObject3.Pages
     return new EmployeeRowPage(driver);
     }
 
+    public EmployeeRowPage GetFirstRow()
+    {
+        Thread.Sleep(1000);
+        IWebElement first = driver.FindElement(By.CssSelector("tr.utilities-employees-table-tr"));
+        Console.WriteLine(first.Text);
+        return new EmployeeRowPage(driver);
+    }
+
     public EditEmployeePage GoToEditEmployeePage()
     {
     WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
