@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace PageObject3.Pages
 {
-  public class EmployeeRowPage : EmployeePage
+  public class EmployeeRowPage : EmployeesPage
   {
     public EmployeeRowPage(IWebDriver driver)
     : base(driver, By.XPath("//div[@class='utilities-employees-header']"))
