@@ -46,7 +46,7 @@ namespace PageObject3.Tests
       //LoginAndGoToHome().GoToUserBranchPage().GetBranchesFromEmployeesPage();
       BesHomePage branch = LoginAndGoToHome();
       branch.GoToUserBranchPage().GetBranchesFromEmployeesPage();
-      Assert.IsTrue(branch.UserBranch.Any<UserBranchPage>(a => a.UserBranch == EmployeeUserBranch.PetahTikva));
+      Assert.IsTrue(branch.UserBranch.Any(a => a.UserBranch == EmployeeUserBranch.Ashdod));
     }
 
     [TestMethod]

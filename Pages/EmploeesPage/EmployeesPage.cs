@@ -16,7 +16,7 @@ namespace PageObject3.Pages
 
         //private IWebElement rowWebElement;
 
-        public EmployeesPage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
+      public EmployeesPage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10) : base(driver, pageVerifierLocator, pageLoadedTimeout)
         {
         }
 

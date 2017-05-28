@@ -32,13 +32,13 @@ namespace PageObject3.Pages
             Thread.Sleep(1000);
             IList<IWebElement> all = driver.FindElements(By.CssSelector("div.utilities-employees-table-branches"));
             foreach (IWebElement element in all)
-                if (element.Text.Contains("Petah Tikva"))
+                if (element.Text.Contains("Ashdod"))
                 Console.WriteLine("{0}", element.Text);
         }
 
         public enum EmployeeUserBranch
         {
-            gal12,
+            Gal12,
             BeerSheva,
             Jerusalem,
             KiriatMoztkin,

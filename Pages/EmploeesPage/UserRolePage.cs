@@ -32,7 +32,7 @@ namespace PageObject3.Pages
         IList<IWebElement> all = driver.FindElements(By.XPath("//div[@class='utilities-employees-table-roles']"));
         foreach (IWebElement element in all)
         {
-            if (element.Text.Contains("Rep"))
+            if (element.Text.Contains("Manager"))
             Console.WriteLine(element.Text);
         }
 
