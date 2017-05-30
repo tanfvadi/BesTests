@@ -13,6 +13,8 @@ namespace PageObject3.Tests
   [TestClass]
   public class GetEmployeeDataTest : BesTestsBase
   {
+    public object myRow;
+
     [TestMethod]
     public void EmployeeDataFromHomePage()
     {
@@ -21,8 +23,10 @@ namespace PageObject3.Tests
     [TestMethod]
     public void GetNamesFromEmployeesPage()
     {
-      LoginAndGoToHome().GoToUserNamePage().GetNamesFromEmployeesPage();
-
+      //BesHomePage myName = LoginAndGoToHome();
+      //myName.GoToUserNamePage();
+      LoginAndGoToHome().GoToUserNamePage().GetNamesFromEmployeesPage();  
+      //Assert.AreEqual<string>("Diana", myName.GoToUserNamePage().names);
     }
 
     [TestMethod]
@@ -37,7 +41,7 @@ namespace PageObject3.Tests
        //LoginAndGoToHome().GoToUserRolePage().SelectRoles();
        BesHomePage role = LoginAndGoToHome();
        role.GoToUserRolePage().SelectRoles();
-       Assert.IsTrue(role.UserRole.Any<UserRolePage>(a => a.UserRole == EmployeeUserRole.Manager));
+       Assert.IsTrue(role.UserRole.Any<UserRolePage>(a => a.UserRole == EmployeeRole.Manager));
     }
 
     [TestMethod]
@@ -52,11 +56,12 @@ namespace PageObject3.Tests
     [TestMethod]
     public void GetRowsFromEmployeesPage()
     {
-      LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+        LoginAndGoToHome().GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+     
 
-      //BesHomePage row = LoginAndGoToHome();
-      //     row.GoToEmployeeRowPage().GetRowsFromEmployeesPage();
-      //Assert.IsTrue(row.UserRole.Any<UserRolePage>(a => a.UserRole==EmployeeUserRole.Teacher));
+        //BesHomePage row = LoginAndGoToHome();
+        //     row.GoToEmployeeRowPage().GetRowsFromEmployeesPage();
+        //Assert.IsTrue(row.UserRole.Any<UserRolePage>(a => a.UserRole==EmployeeUserRole.Teacher));
     }
 
     [TestMethod]

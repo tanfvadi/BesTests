@@ -79,6 +79,7 @@
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
     <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
+    <Compile Include="Pages\PlacementTest\PlacementTestButtonPage.cs" />
     <Compile Include="SpecFlowFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +91,7 @@
     <Compile Include="Tests\BesTestsBase.cs" />
     <Compile Include="Tests\CancelMeetingTests.cs" />
     <Compile Include="Tests\GetEmployeeDataTest.cs" />
+    <Compile Include="Tests\PlacementTestTests.cs" />
     <Compile Include="Tests\SubTeacherTests.cs" />
     <Compile Include="Tests\TransferTests.cs" />
     <Compile Include="Tests\NotificationTests.cs" />

@@ -17,7 +17,7 @@ namespace PageObject3.Pages
     {
       get
       {
-        return WaitForElement(By.XPath("//span[text()='BurlingtonEnglish has sent you an email with instructions for resetting your password. Please check your mailbox.']"), 10).Text;
+      return WaitForElement(By.XPath("//span[text()='BurlingtonEnglish has sent you an email with instructions for resetting your password. Please check your mailbox.']"), 10).Text;
       }
     }
 

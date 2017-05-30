@@ -1,6 +1,7 @@
 ﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
+using PageObject3.Pages.PlacementTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,10 +47,20 @@ namespace PageObject3.Pages
     {
     }
 
-    public TransferPage ClickOnTheMenuAndGoToTransferPage()
+    public void ClickOnMenuButton()
     {
-            ClickOnMenuButton();
-      return new TransferPage(driver);
+        WaitForElement(By.Id("btnConclusions"), 10).Click();
+    }
+
+    public PlacementTestButtonPage ClickOnTheMenuAndGoToPlacementTest()
+    {
+        ClickOnMenuButton();
+        return new PlacementTestButtonPage(driver);
+    }
+        public TransferPage ClickOnTheMenuAndGoToTransferPage()
+    {
+        ClickOnMenuButton();
+        return new TransferPage(driver);
     }
 
     public SaleCoursesPage GoToNewSale()

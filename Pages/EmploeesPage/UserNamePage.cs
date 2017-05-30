@@ -11,7 +11,7 @@ namespace PageObject3.Pages
     public class UserNamePage
     {
         private IWebDriver driver;
-        public string Name;
+        public string names;
         public IWebElement rowElement;
 
         public UserNamePage(IWebDriver driver)

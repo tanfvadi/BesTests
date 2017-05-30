@@ -10,7 +10,9 @@ namespace PageObject3.Pages
 {
   public class EmployeeRowPage : EmployeesPage
   {
-    public EmployeeRowPage(IWebDriver driver)
+     
+        private readonly IWebElement _myRow;
+        public EmployeeRowPage(IWebDriver driver)
     : base(driver, By.XPath("//div[@class='utilities-employees-header']"))
     {
     }
@@ -23,6 +25,12 @@ namespace PageObject3.Pages
           return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, PageObject3.Pages.UserMessagePage>(rowWebElement => new PageObject3.Pages.UserMessagePage(rowWebElement, driver)).ToList<PageObject3.Pages.UserMessagePage>();
         }
     }
+
+    private List<IWebElement> RowCells => _myRow.FindElements(By.CssSelector("td.utilities-employees-table-employee-name")).ToList();
+
+    public string Name => RowCells[1].Text;
+    public string Branch => RowCells[2].Text;
+    public string Role => RowCells[3].Text;
 
 
         //public List<PageObject3.Pages.EmployeePage> UserEdit

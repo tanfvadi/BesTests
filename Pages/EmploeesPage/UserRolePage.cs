@@ -14,7 +14,7 @@ namespace PageObject3.Pages
     public IWebElement rowElement;
     private IWebElement rowWebElement;
 
-    public EmployeeUserRole UserRole { get; internal set; }
+    public EmployeeRole UserRole { get; internal set; }
     public UserRolePage(IWebElement rowWebElement, IWebDriver driver)
     {
         this.rowWebElement = rowWebElement;
@@ -26,7 +26,7 @@ namespace PageObject3.Pages
             this.driver = driver;
         }
 
-        public void SelectRoles()
+    public void SelectRoles()
     {
         Thread.Sleep(1000);
         IList<IWebElement> all = driver.FindElements(By.XPath("//div[@class='utilities-employees-table-roles']"));
@@ -42,7 +42,7 @@ namespace PageObject3.Pages
         //Console.WriteLine(element.Text);
     }
 
-    public enum EmployeeUserRole
+    public enum EmployeeRole
     {
     Manager,
     AreaManager,

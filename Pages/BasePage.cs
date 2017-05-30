@@ -21,10 +21,10 @@ namespace PageObject3.Pages
 
     public BasePage(IWebDriver driver, By pageVerifierLocator, int pageLoadedTimeout = 10)
     {
-            PageVerifierLocator = pageVerifierLocator;
-            this.driver = driver;
-            VerifyPageLoaded(pageLoadedTimeout);
-            WaitUntilElementNotVisible(By.Id("calendar-loader"), 10, null);
+        PageVerifierLocator = pageVerifierLocator;
+        this.driver = driver;
+        VerifyPageLoaded(pageLoadedTimeout);
+        WaitUntilElementNotVisible(By.Id("calendar-loader"), 10, null);
     }
 
     private WebDriverWait Wait(int timeOutInSec = 10, string messageIfFailed = null)
@@ -58,11 +58,7 @@ namespace PageObject3.Pages
             WaitForElement(By.Id("btnDisplayEntityAlert"), 10).Click();
     }
 
-    protected void ClickOnMenuButton()
-    {
-            WaitForElement(By.Id("btnConclusions"), 10).Click();
-    }
-    
+  
    protected void CheckAvailibility()
     {
       IWebElement element = driver.FindElement(By.CssSelector("div[title=Meeting]"));
