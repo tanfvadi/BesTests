@@ -20,8 +20,9 @@ namespace PageObject3.Pages
 
     public static LoginPage GoToLoginPage(IWebDriver driver)
     {
-      driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
-      return new LoginPage(driver);
+        driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
+        //driver.Navigate().GoToUrl("https://172.72.203.201/BESMZPL/");
+        return new LoginPage(driver);
     }
 
     public BesHomePage LoginAndGoToBES(string username, string password)

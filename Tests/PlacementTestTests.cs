@@ -14,7 +14,18 @@ namespace PageObject3.Tests
         [TestMethod]
         public void PlacementTestButtonCheck()
         {
-            LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().ClickOnTheMenuAndGoToPlacementTest();
+            LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().ClickOnTheMenuAndGoToPlacementTest();          
+        }
+
+        [TestMethod]
+        public void ClickOnPTButtonAndCheckIfAllocateButtonIsEnable()
+        {
+            LoginAndGoToHome()
+                .GoToAddLead()
+                .FillNewLeadAndSave()
+                .ClickOnTheMenuAndGoToPlacementTest()
+                .ClickOnPTButton()
+                .CheckIfAllocateButtonIsEnable();
         }
     }
 }
