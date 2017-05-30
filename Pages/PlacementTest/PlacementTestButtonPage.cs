@@ -21,7 +21,7 @@ namespace PageObject3.Pages.PlacementTest
             return new PlacementTestButtonPage(driver);
         }
 
-        public void CheckIfAllocateButtonIsEnable()
+        public void CheckIfAllocateButtonIsEnabled()
         {
             WaitForElement(By.Id("btnPlacementTest"), 10).Click();
             IWebElement enable= WaitForElement(By.Id("btnAllocatePlacementTest"), 10);

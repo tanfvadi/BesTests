@@ -20,12 +20,12 @@ namespace PageObject3.Tests
         [TestMethod]
         public void ClickOnPTButtonAndCheckIfAllocateButtonIsEnable()
         {
-            LoginAndGoToHome()
+                 LoginAndGoToHome()
                 .GoToAddLead()
                 .FillNewLeadAndSave()
                 .ClickOnTheMenuAndGoToPlacementTest()
                 .ClickOnPTButton()
-                .CheckIfAllocateButtonIsEnable();
+                .CheckIfAllocateButtonIsEnabled();
         }
     }
 }
