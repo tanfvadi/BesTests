@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace PageObject3.Pages.PlacementTest
 {
-    public class PlacementTestPage:BasePage
+    public class PlacementTestPage : BasePage
     {
 
         public PlacementTestPage(IWebDriver driver)
@@ -31,7 +31,7 @@ namespace PageObject3.Pages.PlacementTest
 
         public void CheckIfAllocateButtonIsEnabled()
         {
-            IWebElement enabled= WaitForElement(By.Id("btnAllocatePlacementTest"), 10);
+            IWebElement enabled = WaitForElement(By.Id("btnAllocatePlacementTest"), 10);
             if (enabled.Enabled)
             {
                 Console.WriteLine("The button is enabled");
@@ -41,13 +41,20 @@ namespace PageObject3.Pages.PlacementTest
                 Console.WriteLine("The button is disabled");
             }
 
-       }
+        }
 
         public void CheckPTTable()
         {
             Thread.Sleep(1000);
-            foreach (IWebElement element in driver.FindElements(By.CssSelector("tr.allocated-tests-table")))
-                Console.WriteLine(element.Text + Environment.NewLine + "-------------------------------------------");
+            foreach (var row in driver.FindElements(By.CssSelector("tr.allocated-tests-table")))
+            {
+                if (row.FindElements(By.CssSelector("td")).Any(r => r.Text != "-"))
+                {
+                    
+                    Console.WriteLine("The PT table isn't empty!");
+                }
+            }
+
         }
     }
 }
