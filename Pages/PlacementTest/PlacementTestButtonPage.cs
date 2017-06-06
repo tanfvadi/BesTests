@@ -21,11 +21,17 @@ namespace PageObject3.Pages.PlacementTest
             return new PlacementTestButtonPage(driver);
         }
 
+        public PlacementTestButtonPage ClickOnAllocate()
+        {
+            WaitForElement(By.Id("btnAllocatePlacementTest"), 10).Click();
+            return new PlacementTestButtonPage(driver);
+        }
+
+
         public void CheckIfAllocateButtonIsEnabled()
         {
-            WaitForElement(By.Id("btnPlacementTest"), 10).Click();
-            IWebElement enable= WaitForElement(By.Id("btnAllocatePlacementTest"), 10);
-            if (enable.Enabled)
+            IWebElement enabled= WaitForElement(By.Id("btnAllocatePlacementTest"), 10);
+            if (enabled.Enabled)
             {
                 Console.WriteLine("The button is enabled");
             }

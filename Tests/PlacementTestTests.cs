@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static PageObject3.Pages.BasePage;
-
+using static PageObject3.Pages.CustomerPage;
 
 namespace PageObject3.Tests
 {
@@ -26,6 +26,14 @@ namespace PageObject3.Tests
                 .ClickOnTheMenuAndGoToPlacementTest()
                 .ClickOnPTButton()
                 .CheckIfAllocateButtonIsEnabled();
+        }
+
+        public void LogCheck()
+        {
+            CustomerPage lead = LoginAndCreateLead();
+                lead.ClickOnTheMenuAndGoToPlacementTest()
+               .ClickOnAllocate();
+            Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
         }
     }
 }

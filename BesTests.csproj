@@ -86,7 +86,6 @@
       <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\AddEmployeeTest.cs" />
-    <Compile Include="Tests\AddLeadTest.cs" />
     <Compile Include="Tests\AlertTests.cs" />
     <Compile Include="Tests\BesTestsBase.cs" />
     <Compile Include="Tests\CancelMeetingTests.cs" />

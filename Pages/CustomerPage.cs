@@ -179,6 +179,7 @@ namespace PageObject3.Pages
     AlertRemoved = 39,
     SetUpRenewalCall = 40,
     Transfer = 41,
-    }
+    PlacementTestAllocated=42
+        }
   }
 }
