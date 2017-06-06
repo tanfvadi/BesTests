@@ -52,10 +52,10 @@ namespace PageObject3.Pages
         WaitForElement(By.Id("btnConclusions"), 10).Click();
     }
 
-    public PlacementTestButtonPage ClickOnTheMenuAndGoToPlacementTest()
+    public PlacementTestPage ClickOnTheMenuAndGoToPlacementTest()
     {
         ClickOnMenuButton();
-        return new PlacementTestButtonPage(driver);
+        return new PlacementTestPage(driver);
     }
         public TransferPage ClickOnTheMenuAndGoToTransferPage()
     {

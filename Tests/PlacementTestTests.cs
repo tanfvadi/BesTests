@@ -18,6 +18,18 @@ namespace PageObject3.Tests
         }
 
         [TestMethod]
+        public void CheckPlacementTable()
+        {
+            LoginAndGoToHome()
+                .GoToAddLead()
+                .FillNewLeadAndSave()
+                .ClickOnTheMenuAndGoToPlacementTest()
+                .ClickOnPTButton()
+                .CheckPTTable();
+        }
+
+
+        [TestMethod]
         public void ClickOnPTButtonAndCheckIfAllocateButtonIsEnable()
         {
                  LoginAndGoToHome()

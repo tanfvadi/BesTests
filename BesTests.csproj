@@ -79,8 +79,7 @@
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
     <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
-    <Compile Include="Pages\PlacementTest\PlacementTestButtonPage.cs" />
-    <Compile Include="Pages\PlacementTest\PlacementTestTable.cs" />
+    <Compile Include="Pages\PlacementTest\PlacementTestPage.cs" />
     <Compile Include="SpecFlowFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
