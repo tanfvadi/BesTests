@@ -63,6 +63,17 @@ namespace PageObject3.Tests
                 .ClickOnAllocate()
                 .CheckIfIssueDateIsRed();
 
+        }
+        [TestMethod]
+        public void CheckIfBEInfoExist()
+        {
+            LoginAndGoToHome()
+                .GoToAddLead()
+                .FillNewLeadAndSave()
+                .ClickOnTheMenuAndGoToPlacementTest()
+                .ClickOnPTButton()
+                .ClickOnAllocate()
+                .CheckIfBEInfoExist();
 
         }
     }

@@ -38,7 +38,15 @@ namespace PageObject3.Pages.PlacementTest
             return this;
         }
 
-
+        public PlacementTestPage CheckIfBEInfoExist()
+        {
+            Thread.Sleep(1000);
+            WaitForElement(By.Id("btnCancelPlacementTestAllocation"), 10).Click();
+            var beinfo = (WaitForElement(By.XPath("//input[@class='btn button-115 first alert' and @value ='BE Info']")));
+            if (beinfo.GetAttribute("value") == "BE Info")
+                Console.WriteLine("BE Info button is appear");
+            return this;
+        }
 
         public void CheckIfAllocateButtonIsEnabled()
         {
