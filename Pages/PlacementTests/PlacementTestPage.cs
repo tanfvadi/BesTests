@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
@@ -25,7 +26,7 @@ namespace PageObject3.Pages.PlacementTest
         public PlacementTestPage ClickOnAllocate()
         {
             WaitForElement(By.Id("btnAllocatePlacementTest"), 10).Click();
-            return new PlacementTestPage(driver);
+            return this;
         }
 
 
@@ -45,12 +46,10 @@ namespace PageObject3.Pages.PlacementTest
 
         public void CheckPTTable()
         {
-            Thread.Sleep(1000);
             foreach (var row in driver.FindElements(By.CssSelector("tr.allocated-tests-table")))
             {
                 if (row.FindElements(By.CssSelector("td")).Any(r => r.Text != "-"))
-                {
-                    
+                {                  
                     Console.WriteLine("The PT table isn't empty!");
                 }
             }

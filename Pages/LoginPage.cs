@@ -20,8 +20,8 @@ namespace PageObject3.Pages
 
     public static LoginPage GoToLoginPage(IWebDriver driver)
     {
-        driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
-        //driver.Navigate().GoToUrl("https://172.72.203.201/BESMZPL");
+        //driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
+        driver.Navigate().GoToUrl("https://172.72.203.201/BESMZPL");
         return new LoginPage(driver);
     }
 
@@ -31,7 +31,7 @@ namespace PageObject3.Pages
             //WaitForElement(By.Name("username"), 10).SendKeys("liraz.s");
             WaitForElement(By.Name("password"), 10).SendKeys("12345");
             WaitForElement(By.XPath("//span[text()='Log In']"), 10).Click();
-            WaitForElement(By.XPath("//span[text()='School Management']"), 10).Click();
+            //WaitForElement(By.XPath("//span[text()='School Management']"), 10).Click();
       new SelectElement(WaitForElement(By.Name("branchEntityID"), 10)).SelectByValue("26711");
             WaitForElement(By.CssSelector("[class='btn button-59']"), 10).Click();
       return new BesHomePage(driver);
