@@ -80,12 +80,14 @@
     <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
     <Compile Include="Pages\PlacementTest\PlacementTestButtonPage.cs" />
+    <Compile Include="Pages\PlacementTest\PlacementTestTable.cs" />
     <Compile Include="SpecFlowFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\AddEmployeeTest.cs" />
+    <Compile Include="Tests\AddLeadTest.cs" />
     <Compile Include="Tests\AlertTests.cs" />
     <Compile Include="Tests\BesTestsBase.cs" />
     <Compile Include="Tests\CancelMeetingTests.cs" />

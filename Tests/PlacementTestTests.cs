@@ -31,7 +31,7 @@ namespace PageObject3.Tests
         public void LogCheck()
         {
             CustomerPage pt = LoginAndCreateLead();
-                pt.ClickOnTheMenuAndGoToPlacementTest()
+                 pt.ClickOnTheMenuAndGoToPlacementTest()
                 .ClickOnPTButton()
                 .ClickOnAllocate();
             Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
