@@ -28,7 +28,6 @@ namespace PageObject3.Pages
     public BesHomePage LoginAndGoToBES(string username, string password)
     {
             WaitForElement(By.Name("username"), 10).SendKeys("roles.manager");
-            //WaitForElement(By.Name("username"), 10).SendKeys("liraz.s");
             WaitForElement(By.Name("password"), 10).SendKeys("12345");
             WaitForElement(By.XPath("//span[text()='Log In']"), 10).Click();
             //WaitForElement(By.XPath("//span[text()='School Management']"), 10).Click();

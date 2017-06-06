@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using System.Threading;
+using NUnit.Framework.Internal;
 
 namespace PageObject3.Pages.PlacementTest
 {
@@ -29,6 +30,15 @@ namespace PageObject3.Pages.PlacementTest
             return this;
         }
 
+        public PlacementTestPage CheckIfIssueDateIsRed()
+        {
+            var red = (WaitForElement(By.XPath("//td[@class='td-issue-date pl-not-registered']")));
+            if (red.GetAttribute("title") == "Customer Not Registered")
+                 Console.WriteLine("The user not registred yet");  
+            return this;
+        }
+
+
 
         public void CheckIfAllocateButtonIsEnabled()
         {
@@ -44,7 +54,7 @@ namespace PageObject3.Pages.PlacementTest
 
         }
 
-        public void CheckPTTable()
+        public void CheckIfPTTableIsEmpty()
         {
             foreach (var row in driver.FindElements(By.CssSelector("tr.allocated-tests-table")))
             {

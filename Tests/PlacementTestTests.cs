@@ -14,7 +14,10 @@ namespace PageObject3.Tests
         [TestMethod]
         public void PlacementTestButtonCheck()
         {
-            LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().ClickOnTheMenuAndGoToPlacementTest();          
+            LoginAndGoToHome()
+                .GoToAddLead()
+                .FillNewLeadAndSave()
+                .ClickOnTheMenuAndGoToPlacementTest();          
         }
 
         [TestMethod]
@@ -25,7 +28,7 @@ namespace PageObject3.Tests
                 .FillNewLeadAndSave()
                 .ClickOnTheMenuAndGoToPlacementTest()
                 .ClickOnPTButton()
-                .CheckPTTable();
+                .CheckIfPTTableIsEmpty();
         }
 
 
@@ -47,6 +50,20 @@ namespace PageObject3.Tests
                 .ClickOnPTButton()
                 .ClickOnAllocate();
             Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
+        }
+
+        [TestMethod]
+        public void CheckIfIssueDateIsRed()
+        {
+            LoginAndGoToHome()
+                .GoToAddLead()
+                .FillNewLeadAndSave()
+                .ClickOnTheMenuAndGoToPlacementTest()
+                .ClickOnPTButton()
+                .ClickOnAllocate()
+                .CheckIfIssueDateIsRed();
+
+
         }
     }
 }
