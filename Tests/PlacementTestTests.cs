@@ -27,13 +27,14 @@ namespace PageObject3.Tests
                 .ClickOnPTButton()
                 .CheckIfAllocateButtonIsEnabled();
         }
-
+        [TestMethod]
         public void LogCheck()
         {
-            CustomerPage lead = LoginAndCreateLead();
-                lead.ClickOnTheMenuAndGoToPlacementTest()
-               .ClickOnAllocate();
-            Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
+            CustomerPage pt = LoginAndCreateLead();
+                pt.ClickOnTheMenuAndGoToPlacementTest()
+                .ClickOnPTButton()
+                .ClickOnAllocate();
+            Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
         }
     }
 }
