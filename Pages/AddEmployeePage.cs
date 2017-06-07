@@ -43,11 +43,12 @@ namespace PageObject3.Pages
             WaitForElement(By.CssSelector(".utilities-employees-popup-info.utilities-employees-popup-info-roles")).Click();
             WaitForElement(By.XPath("//label[@class='ui-corner-all ui-state-hover']")).Click();
             WaitForElement(By.XPath("//input[@class='utilities-employees-popup-first-name']"), 10).Click();
-
             WaitForElement(By.CssSelector(".utilities-employees-popup-all-branches-chk")).Click();
-            //new SelectElement(WaitForElement(By.CssSelector(".ui-multiselect.ui-widget.ui-state-default.ui-corner-all"))).SelectByIndex(1);
             Thread.Sleep(1000);
+            Console.WriteLine("User Name is: " + WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-name']")).GetAttribute("value"));
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
+            //var userName= WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-name']"));
+            //Console.WriteLine(userName.Text);
             return new AddEmployeePage(driver);
         }     
     }
