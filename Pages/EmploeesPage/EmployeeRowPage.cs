@@ -12,6 +12,8 @@ namespace PageObject3.Pages
   {
      
         private readonly IWebElement _myRow;
+        public IEnumerable<IWebElement> rows;
+
         public EmployeeRowPage(IWebDriver driver)
     : base(driver, By.XPath("//div[@class='utilities-employees-header']"))
     {
@@ -26,27 +28,24 @@ namespace PageObject3.Pages
         }
     }
 
-    private List<IWebElement> RowCells => _myRow.FindElements(By.CssSelector("td.utilities-employees-table-employee-name")).ToList();
+   // public List<IWebElement> row => _myRow.FindElements(By.CssSelector("tr.utilities-employees-table-tr")).ToList();
 
-    public string Name => RowCells[1].Text;
-    public string Branch => RowCells[2].Text;
-    public string Role => RowCells[3].Text;
+    //public string Name => row[1].Text;
+    //public string Branch => row[2].Text;
+    //public string Role => row[3].Text;
 
-
-        //public List<PageObject3.Pages.EmployeePage> UserEdit
-        //{
-        //    get
-        //    {
-        //        return WaitForElements(By.XPath("//div[@class='utilities-employees-edit-btn image-icon-btn' and title()='Edit Employee']"), 10).Select(rowWebElement => new EmployeePage(rowWebElement, driver)).ToList<PageObject3.Pages.EmployeePage>();
-        //    }
-        //}
+        
 
     public void GetRowsFromEmployeesPage()
     {
-        Thread.Sleep(1000);
-        foreach (IWebElement element in driver.FindElements(By.CssSelector("tr.utilities-employees-table-tr")))
-        if (element.Text.Contains("Diana"))
-        Console.WriteLine(element.Text + Environment.NewLine + "-------------------------------------------");
+        //Thread.Sleep(1000);
+        foreach (var row in driver.FindElements(By.CssSelector("tr.utilities-employees-table-tr")).ToList())
+        {
+            var columns = row.FindElements(By.CssSelector("td")).ToList();
+            
+            //if (row.Text.Contains("Diana"))
+            Console.WriteLine(columns[0].Text + Environment.NewLine + "-------------------------------------------");
+        }
     } 
 
     public void TeacherFilterAndEdit()
