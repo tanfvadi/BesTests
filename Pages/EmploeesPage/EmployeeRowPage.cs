@@ -28,25 +28,24 @@ namespace PageObject3.Pages
         }
     }
 
-   // public List<IWebElement> row => _myRow.FindElements(By.CssSelector("tr.utilities-employees-table-tr")).ToList();
+      public void GetRowsFromEmployeesPage()
+      {
+          IList<IWebElement> names = driver.FindElements(By.CssSelector("tr.utilities-employees-table-tr"));
+          foreach (IWebElement element in names)
+              if (element.Text.Contains("Diana"))
+                  Console.WriteLine("{0}", element.Text + Environment.NewLine + "-------------------------------------------");
+      }
 
-    //public string Name => row[1].Text;
-    //public string Branch => row[2].Text;
-    //public string Role => row[3].Text;
 
-        
-
-    public void GetRowsFromEmployeesPage()
-    {
-        //Thread.Sleep(1000);
-        foreach (var row in driver.FindElements(By.CssSelector("tr.utilities-employees-table-tr")).ToList())
-        {
-            var columns = row.FindElements(By.CssSelector("td")).ToList();
-            
-            //if (row.Text.Contains("Diana"))
-            Console.WriteLine(columns[0].Text + Environment.NewLine + "-------------------------------------------");
-        }
-    } 
+    //  public void GetRowsFromEmployeesPage()
+    //{
+    //    foreach (var row in driver.FindElements(By.CssSelector("tr.utilities-employees-table-tr")).ToList())
+    //    {
+    //        var columns = row.FindElements(By.CssSelector("td")).ToList();           
+    //        if (row.Text.Contains("Vadim"))
+    //        Console.WriteLine(columns[0].Text + Environment.NewLine + "-------------------------------------------");
+    //    }
+    //} 
 
     public void TeacherFilterAndEdit()
     {
