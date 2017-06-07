@@ -46,7 +46,7 @@ namespace PageObject3.Pages
 
             WaitForElement(By.CssSelector(".utilities-employees-popup-all-branches-chk")).Click();
             //new SelectElement(WaitForElement(By.CssSelector(".ui-multiselect.ui-widget.ui-state-default.ui-corner-all"))).SelectByIndex(1);
-
+            Thread.Sleep(1000);
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
             return new AddEmployeePage(driver);
         }     
