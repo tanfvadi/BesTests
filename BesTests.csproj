@@ -74,22 +74,26 @@
       <DependentUpon>BesTests.feature</DependentUpon>
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
-    <Compile Include="Pages\AddEmployeePage.cs" />
-    <Compile Include="Pages\EditEmployeePage.cs" />
+    <Compile Include="Pages\AddEditEmployeePage.cs" />
+    <Compile Include="Pages\EmploeesPage\EmployeeRow.cs" />
+    <Compile Include="Pages\EmploeesPage\EmployeesTablePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
-    <Compile Include="Pages\EmploeesPage\UserMessagePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
+    <Compile Include="Pages\EmployeeRole.cs" />
     <Compile Include="Pages\PlacementTests\PlacementTestPage.cs" />
+    <Compile Include="Pages\UtilitiesPage.cs" />
     <Compile Include="SpecFlowFeature1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
     </Compile>
+    <Compile Include="StringUtils.cs" />
     <Compile Include="Tests\AddEmployeeTest.cs" />
     <Compile Include="Tests\AddLeadTest.cs" />
     <Compile Include="Tests\AlertTests.cs" />
     <Compile Include="Tests\BesTestsBase.cs" />
     <Compile Include="Tests\CancelMeetingTests.cs" />
+    <Compile Include="Tests\GetObjectEmployeeDataTest.cs" />
     <Compile Include="Tests\GetEmployeeDataTest.cs" />
     <Compile Include="Tests\PlacementTestTests.cs" />
     <Compile Include="Tests\SubTeacherTests.cs" />
@@ -102,7 +106,6 @@
     <Compile Include="Tests\CustomerPageTests.cs" />
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeeRowPage.cs" />
-    <Compile Include="Pages\EmploeesPage\UserRolePage.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeesPage.cs" />
     <Compile Include="Pages\AddLeadPage.cs" />
     <Compile Include="Pages\Alerts\AlertSummary.cs" />

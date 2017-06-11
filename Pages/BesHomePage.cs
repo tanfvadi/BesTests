@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+using PageObject3.Pages.EmploeesPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,18 +39,12 @@ namespace PageObject3.Pages
             return new AddLeadPage(driver);
         }
 
-        public UserNamePage GoToUserNamePage()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new UserNamePage(driver);
-        }
 
-        //public AddEmployeePage GoToClickOnEditEmployeeButton()
+        //public AddEditEmployeePage GoToClickOnEditEmployeeButton()
         //    {
         //        WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
         //        WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-        //        return new AddEmployeePage(driver);
+        //        return new AddEditEmployeePage(driver);
         //    }
 
         public UserMessagePage GoToUserMessagePage()
@@ -60,15 +54,7 @@ namespace PageObject3.Pages
             return new UserMessagePage(driver);
         }
 
-        public List<UserRolePage> UserRole
-        {
-            get
-            {
-                return WaitForElements(By.XPath("//div[@class='utilities-employees-table-roles']"), 10)
-                    .Select<IWebElement, UserRolePage>(rowWebElement => new UserRolePage(rowWebElement, driver))
-                    .ToList<UserRolePage>();
-            }
-        }
+        
 
         public List<UserBranchPage> UserBranch
         {
@@ -85,8 +71,8 @@ namespace PageObject3.Pages
             get
             {
                 return WaitForElements(By.XPath("//div[@class='utilities-employees-table-employee-name']"), 10)
-                    .Select(rowWebElement => new PageObject3.Pages.UserNamePage(driver))
-                    .ToList<PageObject3.Pages.UserNamePage>();
+                    .Select(rowWebElement => new UserNamePage(driver))
+                    .ToList<UserNamePage>();
             }
         }
 
@@ -99,26 +85,8 @@ namespace PageObject3.Pages
         //}
 
 
-        public UserRolePage GoToUserRolePage()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new UserRolePage(driver);
-        }
+     
 
-        public UserBranchPage GoToUserBranchPage()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new UserBranchPage(driver);
-        }
-
-        public EmployeeRowPage GoToEmployeeRowPage()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new EmployeeRowPage(driver);
-        }
 
         public EmployeeRowPage GetFirstRow()
         {
@@ -128,19 +96,21 @@ namespace PageObject3.Pages
             return new EmployeeRowPage(driver);
         }
 
-        public EditEmployeePage GoToEditEmployeePage()
+
+        public EmployeesTablePage GoToEmployeesPage()
         {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new EditEmployeePage(driver);
+            return
+                GotoUtilities()
+                    .GotoUtilitiesEmployeesPage();
         }
 
-        public AddEmployeePage GoToEmployeePage()
+        public UtilitiesPage GotoUtilities()
         {
             WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new AddEmployeePage(driver);
+            WaitForElement(By.Id("reports"));
+            return new UtilitiesPage(driver);
         }
+
 
         //public List<IWebElement> RowCells => _myName.FindElements(By.CssSelector("tr.gridRow")).ToList();
 
@@ -155,6 +125,7 @@ namespace PageObject3.Pages
                 Console.WriteLine("{0}", element.Text + Environment.NewLine + "-------------------------------------------");
         }
     }
+    
 }
 
 

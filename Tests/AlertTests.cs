@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObject3.Pages;
-using System;
 using System.Linq;
 using static PageObject3.Pages.CustomerPage;
 

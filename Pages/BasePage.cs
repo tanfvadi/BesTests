@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.ObjectModel;
+using System.Runtime.Remoting.Messaging;
 
 namespace PageObject3.Pages
 {
@@ -41,7 +42,27 @@ namespace PageObject3.Pages
       return Wait(timeOutInSec, messageIfFailed).Until(ExpectedConditions.ElementIsVisible(by));
     }
 
-    protected ReadOnlyCollection<IWebElement> WaitForElements(By by, int timeOutInSec = 10)
+      protected void WaitUntil(Func<object,bool> a, string message = null, int timeOutInSec = 10,
+          bool throwExceptionIfTimeoutReached = true)
+      {
+          var wait = new DefaultWait<object>(new object(), new SystemClock());
+          if (message != null)
+              wait.Message = message;
+          wait.Timeout = TimeSpan.FromSeconds(timeOutInSec);
+            wait.IgnoreExceptionTypes(typeof(Exception));
+
+          try
+          {
+              wait.Until(a);
+          }
+          catch (Exception)
+          {
+              if (throwExceptionIfTimeoutReached)
+                  throw;
+          }
+      }
+
+      protected ReadOnlyCollection<IWebElement> WaitForElements(By by, int timeOutInSec = 10)
     {
       string messageIfFailed = "Could not find element:" + by.ToString() + " after waiting:" + timeOutInSec + " seconds.";
       return Wait(timeOutInSec, messageIfFailed).Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));

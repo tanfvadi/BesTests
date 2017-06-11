@@ -19,7 +19,7 @@ namespace PageObject3.Pages
     }
 
     public AlertSummary(IWebDriver driver)
-      : base(driver, By.XPath("//div[@class='label' and text()='Message:']"), 10)
+      : base(driver, By.XPath("//div[@class='label' and text()='IsMessageSelected:']"), 10)
     {
     }
   }

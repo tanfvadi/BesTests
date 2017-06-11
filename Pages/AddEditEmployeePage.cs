@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace PageObject3.Pages
 {
-    public class AddEmployeePage:BasePage
+    public class AddEditEmployeePage:BasePage
     {
 
-        public AddEmployeePage(IWebDriver driver) : base(driver, By.XPath("//div[@class='utilities-employees-header']"), 10)
+        public AddEditEmployeePage(IWebDriver driver) : base(driver, By.XPath("//div[@class='utilities-employees-header']"), 10)
         {
 
         }
@@ -25,7 +22,7 @@ namespace PageObject3.Pages
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public AddEmployeePage FillNewEmployeeAndSave(string username = null)
+        public AddEditEmployeePage FillNewEmployeeAndSave(string username = null)
         {
             username = username ?? RandomString(8);
             WaitForElement(By.CssSelector(".btn.button-59.utilities-employees-add-btn"), 10).Click();
@@ -47,9 +44,30 @@ namespace PageObject3.Pages
             Thread.Sleep(1000);
             Console.WriteLine("User Name is: " + WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-name']")).GetAttribute("value"));
             WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']")).Click();
-            //var userName= WaitForElement(By.XPath("//input[@class='utilities-employees-popup-input utilities-employees-popup-login-name']"));
-            //Console.WriteLine(userName.Text);
-            return new AddEmployeePage(driver);
-        }     
+            return new AddEditEmployeePage(driver);
+        }
+
+        public AddEditEmployeePage AddSubTeachers()
+        {
+            WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10).Click();
+            new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10)).SelectByIndex(12);
+            WaitForElement(By.CssSelector("[data-id='122169']"), 10).Click();
+            WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Click();
+            WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).SendKeys("va");
+            WaitForElement(By.XPath("//a[contains(@id,'ui-id') and text()='Vadim Teacher']"), 10).Click();
+            WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn' and text()='Save']"), 10).Click();
+            return new AddEditEmployeePage(driver);
+        }
+
+        public AddEditEmployeePage DeleteSubTeachers()
+        {
+            WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10).Click();
+            new SelectElement(WaitForElement(By.XPath("//select[@class='utilities-employees-filter-select utilities-employees-role-filter-select']"), 10)).SelectByIndex(12);
+            WaitForElement(By.CssSelector("[data-id='122169']"), 10).Click();
+            WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Click();
+            WaitForElement(By.CssSelector(".substitute-teacher-left-itm.substitute-teacher-input.ui-autocomplete-input"), 10).Clear();
+            WaitForElement(By.XPath("//button[@class='btn button-59 utilities-employees-save-btn']"), 10).Click();
+            return new AddEditEmployeePage(driver);
+        }
     }
 }

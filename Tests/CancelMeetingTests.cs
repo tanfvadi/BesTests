@@ -6,7 +6,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObject3.Pages;
-using System;
 using System.Linq;
 using System.Threading;
 using static PageObject3.Pages.CustomerPage;

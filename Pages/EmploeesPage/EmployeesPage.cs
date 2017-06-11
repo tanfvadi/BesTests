@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace PageObject3.Pages
 {
@@ -19,7 +20,11 @@ namespace PageObject3.Pages
         {
         }
 
-    
+      public void SelectAllMessages()
+      {
+          Thread.Sleep(1000);
+          driver.FindElement(By.XPath("//input[@class='utilities-employees-msg-chk-all']")).Click();
+      }
 
         //public EmployeePage(IWebElement rowWebElement, IWebDriver driver)
         //{

@@ -56,14 +56,14 @@ namespace PageObject3.Tests
         [TestCleanup]
         public void QuitBrowser()
         {
-            if (this.TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
+            if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
             {
                 //Take the screenshot
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
                 //Save the screenshot
                 ss.SaveAsFile("C:/Users/vadim.t.ECB/Localexplorer.jpeg", ScreenshotImageFormat.Jpeg);
             }
-            if (this.TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
+            if (TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
             {
                 driver.Quit();
             }

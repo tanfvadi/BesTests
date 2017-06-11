@@ -24,7 +24,7 @@ namespace PageObject3.Pages
     {
         get
         {
-          return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, PageObject3.Pages.UserMessagePage>(rowWebElement => new PageObject3.Pages.UserMessagePage(rowWebElement, driver)).ToList<PageObject3.Pages.UserMessagePage>();
+          return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, UserMessagePage>(rowWebElement => new UserMessagePage(rowWebElement, driver)).ToList<UserMessagePage>();
         }
     }
 

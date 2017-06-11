@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using System.Threading;
-using NUnit.Framework.Internal;
 
 namespace PageObject3.Pages.PlacementTest
 {
