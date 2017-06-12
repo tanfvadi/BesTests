@@ -1,12 +1,9 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using OpenQA.Selenium;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages.EmploeesPage
 {
     public class UserBranchPage
     {

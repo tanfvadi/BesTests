@@ -1,8 +1,7 @@
-﻿
+﻿using BesTests.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class CustomerPageTests : BesTestsBase

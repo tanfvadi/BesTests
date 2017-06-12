@@ -1,11 +1,9 @@
-﻿
+﻿using System;
+using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.ObjectModel;
-using System.Runtime.Remoting.Messaging;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   public class BasePage
   {

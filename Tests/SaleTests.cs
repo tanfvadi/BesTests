@@ -1,10 +1,8 @@
-﻿
+﻿using System.Linq;
+using BesTests.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
-using System.Linq;
-using static PageObject3.Pages.CustomerPage;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class SaleTests : BesTestsBase
@@ -14,7 +12,7 @@ namespace PageObject3.Tests
     {
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToNewSale().SelectCourseAndGoToPaymentPage().SelectPaymentAndCompleteSale();
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.Sale));
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.Sale));
     }
 
     [TestMethod]
@@ -23,7 +21,7 @@ namespace PageObject3.Tests
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToNewSale().SelectCourseAndGoToPaymentPage().SelectPaymentAndCompleteSale();
       lead.ClickOnCancelButtonAndGoToCancelSale().CancelSale();
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.SaleCancelled));
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.SaleCancelled));
     }
 
     [TestMethod]
@@ -32,7 +30,7 @@ namespace PageObject3.Tests
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToNewSale().SelectCourseAndGoToPaymentPage().SelectPaymentAndCompleteSale();
       lead.ChangelSaleAndGoToSalePage().ChangeOptionAndSubmitSale();
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.ChangeaSale));
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.ChangeaSale));
     }
   }
 }

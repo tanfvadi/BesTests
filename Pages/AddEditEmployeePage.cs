@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using OpenQA.Selenium;
 using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
     public class AddEditEmployeePage:BasePage
     {

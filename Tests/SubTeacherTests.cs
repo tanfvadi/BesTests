@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class SubTeacherTests : BesTestsBase

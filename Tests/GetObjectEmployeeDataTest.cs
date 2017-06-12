@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Linq;
-using PageObject3.Pages;
+using BesTests.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
     [TestClass]
     public class GetObjectEmployeeDataTest : BesTestsBase

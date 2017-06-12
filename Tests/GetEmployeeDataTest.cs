@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class GetEmployeeDataTest : BesTestsBase
@@ -29,7 +28,7 @@ namespace PageObject3.Tests
       [TestMethod]
     public void SelectAllMessages()
     {
-      LoginAndGoToHome().GoToEmployeesPage().;
+      LoginAndGoToHome().GoToEmployeesPage().SelectAllMessages();
     }
 
     [TestMethod]

@@ -7,7 +7,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   [Serializable]
   public class NotOnExpectedPageException : Exception

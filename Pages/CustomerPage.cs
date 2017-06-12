@@ -1,12 +1,13 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Linq;
+using BesTests.Pages.Alerts;
+using BesTests.Pages.Meetings;
+using BesTests.Pages.PlacementTests;
+using BesTests.Pages.Sales;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
-using PageObject3.Pages.PlacementTest;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   public class CustomerPage : BasePage
   {

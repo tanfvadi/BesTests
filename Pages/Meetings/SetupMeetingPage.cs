@@ -4,13 +4,13 @@
 // MVID: 0D9DC055-2B5D-4B03-9C15-724F3DFE242F
 // Assembly location: C:\Users\vadim.t.ECB\Documents\Visual Studio 2015\Projects\PageObject3\PageObject3\bin\Debug\PageObject3.dll
 
+using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Threading;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages.Meetings
 {
   public class SetupMeetingPage : BasePage
   {

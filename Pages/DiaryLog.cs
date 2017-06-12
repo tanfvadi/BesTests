@@ -1,30 +1,28 @@
-﻿
-using OpenQA.Selenium;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static PageObject3.Pages.CustomerPage;
+using OpenQA.Selenium;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   public class DiaryLog
   {
     private IWebElement rowElement;
     private IWebDriver driver;
 
-    public DiaryLogType LogType
+    public CustomerPage.DiaryLogType LogType
     {
       get
       {
-        return (DiaryLogType) Enum.Parse(typeof (DiaryLogType), Regex.Replace(rowElement.FindElement(By.CssSelector("td.type")).Text.Trim(), "\\s+", ""), true);
+        return (CustomerPage.DiaryLogType) Enum.Parse(typeof (CustomerPage.DiaryLogType), Regex.Replace(rowElement.FindElement(By.CssSelector("td.type")).Text.Trim(), "\\s+", ""), true);
       }
     }
 
-    public LeadLogActionType ActionLogType
+    public CustomerPage.LeadLogActionType ActionLogType
     {
       get
       {
-        return (LeadLogActionType) Enum.Parse(typeof (LeadLogActionType), Regex.Replace(rowElement.FindElement(By.CssSelector("td.type")).Text.Trim(), "\\s+", ""), true);
+        return (CustomerPage.LeadLogActionType) Enum.Parse(typeof (CustomerPage.LeadLogActionType), Regex.Replace(rowElement.FindElement(By.CssSelector("td.type")).Text.Trim(), "\\s+", ""), true);
       }
     }
 

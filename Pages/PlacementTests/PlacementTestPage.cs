@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using OpenQA.Selenium;
 using System.Threading;
+using OpenQA.Selenium;
 
-namespace PageObject3.Pages.PlacementTest
+namespace BesTests.Pages.PlacementTests
 {
     public class PlacementTestPage : BasePage
     {

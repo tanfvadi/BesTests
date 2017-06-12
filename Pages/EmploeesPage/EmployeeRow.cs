@@ -1,8 +1,8 @@
-﻿using OpenQA.Selenium;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
 
-namespace PageObject3.Pages.EmploeesPage
+namespace BesTests.Pages.EmploeesPage
 {
     public class EmoloyeeRow
     {

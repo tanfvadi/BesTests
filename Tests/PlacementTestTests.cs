@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
-using System.Linq;
-using static PageObject3.Pages.CustomerPage;
+﻿using System.Linq;
+using BesTests.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
     [TestClass]
     public class PlacementTestTests : BesTestsBase
@@ -46,7 +45,7 @@ namespace PageObject3.Tests
                  pt.ClickOnTheMenuAndGoToPlacementTest()
                 .ClickOnPTButton()
                 .ClickOnAllocate();
-            Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.PlacementTestAllocated));
+            Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.PlacementTestAllocated));
         }
 
         [TestMethod]

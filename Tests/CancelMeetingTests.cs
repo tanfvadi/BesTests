@@ -4,13 +4,12 @@
 // MVID: 0D9DC055-2B5D-4B03-9C15-724F3DFE242F
 // Assembly location: C:\Users\vadim.t.ECB\Documents\Visual Studio 2015\Projects\PageObject3\PageObject3\bin\Debug\PageObject3.dll
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
 using System.Linq;
 using System.Threading;
-using static PageObject3.Pages.CustomerPage;
+using BesTests.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class CancelMeetingTests : BesTestsBase
@@ -22,7 +21,7 @@ namespace PageObject3.Tests
       lead.SetupMeetingAndGoToCalendar().SetupMeeting();
       lead.CancelMeetingClickAndGoToCancelMeetingPage();
       Thread.Sleep(3000);
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.MeetingCanceled));
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.MeetingCanceled));
     }
   }
 }

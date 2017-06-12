@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PageObject3.Pages;
-using System.Linq;
-using static PageObject3.Pages.CustomerPage;
+﻿using System.Linq;
+using BesTests.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
   [TestClass]
   public class AlertTests : BesTestsBase
@@ -13,8 +12,8 @@ namespace PageObject3.Tests
     {
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToAlertPage().AddAlert("test alert");
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.AlertAdded));
-      Assert.AreEqual<string>("test alert", lead.AllLogs.First<DiaryLog>(a => a.LogType == DiaryLogType.AlertAdded).ClickToSeeAlertSummary().AlertMessage);
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertAdded));
+      Assert.AreEqual<string>("test alert", lead.AllLogs.First<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertAdded).ClickToSeeAlertSummary().AlertMessage);
     }
 
     [TestMethod]
@@ -23,8 +22,8 @@ namespace PageObject3.Tests
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToAlertPage().AddAlert("test alert");
       lead.EditAlert().EditAlert("Vadim's Edit");
-      Assert.AreEqual<string>("Vadim's Edit", lead.AllLogs.First<DiaryLog>(a => a.LogType == DiaryLogType.AlertModified).ClickToSeeAlertSummary().AlertMessage);
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.AlertModified));
+      Assert.AreEqual<string>("Vadim's Edit", lead.AllLogs.First<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertModified).ClickToSeeAlertSummary().AlertMessage);
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertModified));
     }
 
     [TestMethod]
@@ -33,8 +32,8 @@ namespace PageObject3.Tests
       CustomerPage lead = LoginAndCreateLead();
       lead.GoToAlertPage().AddAlert("test alert");
       lead.RemoveAlert().RemoveAlert();
-      Assert.AreEqual<string>("test alert", lead.AllLogs.First<DiaryLog>(a => a.LogType == DiaryLogType.AlertRemoved).ClickToSeeAlertSummary().AlertMessage);
-      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == DiaryLogType.AlertRemoved));
+      Assert.AreEqual<string>("test alert", lead.AllLogs.First<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertRemoved).ClickToSeeAlertSummary().AlertMessage);
+      Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.AlertRemoved));
     }
   }
 }

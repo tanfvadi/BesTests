@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
     [TestClass]
     public class AddEmployeeTest : BesTestsBase

@@ -1,4 +1,4 @@
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
     public enum EmployeeRole
     {

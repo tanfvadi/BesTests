@@ -1,12 +1,9 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages.EmploeesPage
 {
   public class EmployeeRowPage : EmployeesPage
   {

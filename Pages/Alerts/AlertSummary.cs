@@ -6,7 +6,7 @@
 
 using OpenQA.Selenium;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages.Alerts
 {
   public class AlertSummary : BasePage
   {

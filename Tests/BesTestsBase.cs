@@ -1,10 +1,11 @@
-﻿
+﻿using BesTests.Pages;
+using BesTests.Pages.Meetings;
+using BesTests.Pages.Sales;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PageObject3.Pages;
 
-namespace PageObject3.Tests
+namespace BesTests.Tests
 {
     [TestClass]
     public class BesTestsBase

@@ -1,7 +1,7 @@
+using BesTests.Pages.EmploeesPage;
 using OpenQA.Selenium;
-using PageObject3.Pages.EmploeesPage;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
     public class UtilitiesPage : BasePage
     {

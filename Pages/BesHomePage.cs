@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
-using PageObject3.Pages.EmploeesPage;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using BesTests.Pages.EmploeesPage;
+using OpenQA.Selenium;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
     public class BesHomePage : BasePage
     {
@@ -113,8 +113,7 @@ namespace PageObject3.Pages
 
 
         //public List<IWebElement> RowCells => _myName.FindElements(By.CssSelector("tr.gridRow")).ToList();
-
-45        //public string Name => RowCells[4].Text;
+    //public string Name => RowCells[4].Text;
 
         public void GetEmployeeData()
         {

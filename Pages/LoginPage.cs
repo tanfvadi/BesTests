@@ -4,12 +4,13 @@
 // MVID: 0D9DC055-2B5D-4B03-9C15-724F3DFE242F
 // Assembly location: C:\Users\vadim.t.ECB\Documents\Visual Studio 2015\Projects\PageObject3\PageObject3\bin\Debug\PageObject3.dll
 
+using System;
+using BesTests.Pages.Alerts;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
-using System;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   public class LoginPage : BasePage
   {

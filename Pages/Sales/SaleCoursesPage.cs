@@ -7,7 +7,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages.Sales
 {
   public class SaleCoursesPage : BasePage
   {

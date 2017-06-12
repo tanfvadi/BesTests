@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0B0261A3-A448-49E3-AA8A-C5639CDC2408}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>PageObject3</AssemblyName>
+    <AssemblyName>BesTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>PageObject3</RootNamespace>
+    <RootNamespace>BesTests</RootNamespace>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -74,8 +74,11 @@
       <DependentUpon>BesTests.feature</DependentUpon>
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
+    <Compile Include="Pages\Courses\CourseColumn.cs" />
+    <Compile Include="Pages\Courses\CourseRow.cs" />
+    <Compile Include="Pages\Courses\CourseType.cs" />
+    <Compile Include="Pages\Courses\EditCoursePopup.cs" />
     <Compile Include="Pages\AddEditEmployeePage.cs" />
-    <Compile Include="Pages\CoursesPage.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeeRow.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeesTablePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="Pages\DiaryLog.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Pages\Courses\TopicLessons.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -141,6 +145,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Pages\Courses\CoursesClassDiagram.cd" />
     <None Include="runtests.cmd" />
     <None Include="SpecFlowFeature1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

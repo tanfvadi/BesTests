@@ -1,14 +1,10 @@
-﻿using OpenQA.Selenium;
-using PageObject3.Pages.EmploeesPage;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Support.UI;
 using System.Threading;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
-namespace PageObject3.Pages.EmploeesPage
+namespace BesTests.Pages.EmploeesPage
 {
     public class EmployeesTablePage : BasePage
     {
@@ -55,10 +51,11 @@ namespace PageObject3.Pages.EmploeesPage
             return this;
         }
 
-        public void SelectAllMessages()
+        public EmployeesTablePage SelectAllMessages()
         {
             Thread.Sleep(1000);
             driver.FindElement(By.XPath("//input[@class='utilities-employees-msg-chk-all']")).Click();
+            return this;
         }
 
         public string EmployeesCount => WaitForElement(By.Id("utilities-employees-count-span")).Text;

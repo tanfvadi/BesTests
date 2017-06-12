@@ -1,9 +1,8 @@
-﻿
+﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
-using System;
 
-namespace PageObject3.Pages
+namespace BesTests.Pages
 {
   public class AddLeadPage : BasePage
   {

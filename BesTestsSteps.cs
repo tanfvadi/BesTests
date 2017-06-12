@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace PageObject3
+namespace BesTests
 {
     [Binding]
     public class BesTestsSteps
