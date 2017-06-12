@@ -21,8 +21,8 @@ namespace BesTests.Pages
 
     public static LoginPage GoToLoginPage(IWebDriver driver)
     {
-        //driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
-        driver.Navigate().GoToUrl("https://172.72.203.201/BESMZPL");
+        driver.Navigate().GoToUrl("https://beweb.ecb.co.il/account/login");
+       // driver.Navigate().GoToUrl("https://172.72.203.201/BESMZPL");
         return new LoginPage(driver);
     }
 

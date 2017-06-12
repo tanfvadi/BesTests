@@ -105,6 +105,7 @@
     <Compile Include="Tests\NotificationTests.cs" />
     <Compile Include="Tests\SaleTests.cs" />
     <Compile Include="Tests\SetupMeettingTests.cs" />
+    <Compile Include="Tests\UtilitiesCoursesTests.cs" />
     <Compile Include="Tests\WrongUsernameTest.cs" />
     <Compile Include="Tests\ForgotPasswordTests.cs" />
     <Compile Include="Tests\CustomerPageTests.cs" />

@@ -1,7 +1,18 @@
-﻿namespace BesTests.Pages.Courses
+﻿using OpenQA.Selenium;
+
+namespace BesTests.Pages.Courses
 {
     public class CourseRow
     {
+        private readonly IWebElement _rowElement;
+        private readonly IWebDriver _driver;
+
+        public CourseRow(IWebElement rowElement,IWebDriver driver)
+        {
+            _rowElement = rowElement;
+            _driver = driver;
+        }
+
         public string CourseName
         {
             get

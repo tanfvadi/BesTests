@@ -1,20 +1,32 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
+using OpenQA.Selenium;
 
 namespace BesTests.Pages.Courses
 {
-    public class CourseSection
+    public class CourseSection : BasePage
     {
+        public CourseSection(IWebDriver driver): base(driver,By.CssSelector(".course-column"))
+        {
+        }
+
         public List<CourseRow> Courses
         {
             get
             {
-                throw new System.NotImplementedException();
+                //Find all courses rows IWebElements
+                WaitForElements(By.CssSelector("li.course:not(.hidden)"));
+                //For each courseRow element return New CourseRow and send him(IWebElement,driver)
+                return null;
             }
         }
 
         public CourseSection SearchCourse(string courseName)
         {
-            throw new System.NotImplementedException();
+            var oldCount = Courses.Count;
+            WaitForElement(By.Id("filterCourse")).SendKeys(courseName);
+            WaitUntil(o => Courses.Count != oldCount);
+            return this;
         }
     }
 }

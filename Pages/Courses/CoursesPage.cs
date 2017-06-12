@@ -9,12 +9,6 @@ namespace BesTests.Pages.Courses
         {
         }
 
-        public CourseSection CourseSection
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+        public CourseSection CourseSection => new CourseSection(driver);
     }
 }
