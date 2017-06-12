@@ -7,14 +7,14 @@
 using System.Linq;
 using System.Threading;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class CancelMeetingTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void CancelMeeting()
     {
       CustomerPage lead = LoginAndCreateLead();

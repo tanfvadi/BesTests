@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class GetEmployeeDataTest : BesTestsBase
   {
     public object myRow;
 
-    [TestMethod]
+    [Test]
     public void EmployeeDataFromHomePage()
     {
       LoginAndGoToHome().GetEmployeeData();
     }
 
-      [TestMethod]
+      [Test]
       public void GetNamesFromEmployeesPage()
       {
           List<string> names = new List<string>();
@@ -25,13 +25,13 @@ namespace BesTests.Tests
           }
       }
 
-      [TestMethod]
+      [Test]
     public void SelectAllMessages()
     {
       LoginAndGoToHome().GoToEmployeesPage().SelectAllMessages();
     }
 
-    [TestMethod]
+    [Test]
     public void GetRolesFromEmployeesPage()
     {
        //LoginAndGoToHome().GoToUserRolePage().SelectRoles();

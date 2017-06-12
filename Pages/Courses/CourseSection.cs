@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using OpenQA.Selenium;
 
 namespace BesTests.Pages.Courses
@@ -10,23 +11,17 @@ namespace BesTests.Pages.Courses
         {
         }
 
-        public List<CourseRow> Courses
-        {
-            get
-            {
-                //Find all courses rows IWebElements
-                WaitForElements(By.CssSelector("li.course:not(.hidden)"));
-                //For each courseRow element return New CourseRow and send him(IWebElement,driver)
-                return null;
-            }
-        }
+        public List<CourseRow> Courses => 
+            FindElementsByCss<CourseRow>("li.course:not(.hidden)");
+
 
         public CourseSection SearchCourse(string courseName)
         {
-            var oldCount = Courses.Count;
+            //var oldCount = Courses.Count;
             WaitForElement(By.Id("filterCourse")).SendKeys(courseName);
-            WaitUntil(o => Courses.Count != oldCount);
+            //WaitUntil(o => Courses.Count != oldCount);
             return this;
         }
+      
     }
 }

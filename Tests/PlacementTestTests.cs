@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class PlacementTestTests : BesTestsBase
     {
-        [TestMethod]
+        [Test]
         public void PlacementTestButtonCheck()
         {
             LoginAndGoToHome()
@@ -16,7 +16,7 @@ namespace BesTests.Tests
                 .ClickOnTheMenuAndGoToPlacementTest();          
         }
 
-        [TestMethod]
+        [Test]
         public void CheckPlacementTable()
         {
             LoginAndGoToHome()
@@ -28,7 +28,7 @@ namespace BesTests.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void ClickOnPTButtonAndCheckIfAllocateButtonIsEnable()
         {
                  LoginAndGoToHome()
@@ -38,7 +38,7 @@ namespace BesTests.Tests
                 .ClickOnPTButton()
                 .CheckIfAllocateButtonIsEnabled();
         }
-        [TestMethod]
+        [Test]
         public void LogCheck()
         {
             CustomerPage pt = LoginAndCreateLead();
@@ -48,7 +48,7 @@ namespace BesTests.Tests
             Assert.IsTrue(pt.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.PlacementTestAllocated));
         }
 
-        [TestMethod]
+        [Test]
         public void CheckIfIssueDateIsRed()
         {
             LoginAndGoToHome()
@@ -60,7 +60,7 @@ namespace BesTests.Tests
                 .CheckIfIssueDateIsRed();
 
         }
-        [TestMethod]
+        [Test]
         public void CheckIfBEInfoExist()
         {
             LoginAndGoToHome()

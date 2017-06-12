@@ -13,20 +13,14 @@ namespace BesTests.Pages.Courses
             _driver = driver;
         }
 
-        public string CourseName
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+        public string CourseName => _rowElement.FindElement(By.CssSelector("div.course-name")).Text;
 
-        public int CourseID
+        public string CourseId => _rowElement.FindElement(By.CssSelector("label[data-courseid']")).Text;
+
+        public CourseRow CourseID()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+         
+            return this;
         }
 
         public CourseType CourseType
@@ -38,14 +32,16 @@ namespace BesTests.Pages.Courses
         }
 
 
-        public CourseRow Check()
+        public CourseRow Select()
         {
-            throw new System.NotImplementedException();
+            _rowElement.Click();
+            return this;
         }
 
-        public bool IsChecked()
+        public CourseRow IsChecked()
         {
-            throw new System.NotImplementedException();
+            _rowElement.Selected.ToString();
+            return this;
         }
 
         public EditCoursePopup EditCourse()

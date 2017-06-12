@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class GetObjectEmployeeDataTest : BesTestsBase
     {
-        [TestMethod]
+        [Test]
         public void PrintNamesOfAllEmployees()
         {
             //loop through all employees and write line all names
@@ -20,7 +20,7 @@ namespace BesTests.Tests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void EditEmployee()
         {
             //loop through all employees and writeline all names
@@ -29,7 +29,7 @@ namespace BesTests.Tests
             employee.Edit();
         }
 
-        [TestMethod]
+        [Test]
         public void SelectMessage()
         {
             //loop through all employees and writeline all names
@@ -41,7 +41,7 @@ namespace BesTests.Tests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void CheckRolesFilter()
         {
             var employeesPage = LoginAndGoToHome().GoToEmployeesPage();

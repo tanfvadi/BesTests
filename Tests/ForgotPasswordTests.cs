@@ -6,19 +6,19 @@
 
 using System;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class ForgotPasswordTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void ForgotPassword()
     {
       ForgotPasswordPage forgotPasswordPage = LoginPage.GoToLoginPage(driver).GoToForgotPasswordPage();
       forgotPasswordPage.ResetPassword("yonni.hoch@ecb.co.il").SaveImage();
-      Assert.AreEqual<string>("BurlingtonEnglish has sent you an email with instructions for resetting your password. Please check your mailbox.", forgotPasswordPage.GetSuccessMessageText);
+      Assert.AreEqual("BurlingtonEnglish has sent you an email with instructions for resetting your password. Please check your mailbox.", forgotPasswordPage.GetSuccessMessageText);
       Console.WriteLine("Forgot Password Success!");
     }
   }

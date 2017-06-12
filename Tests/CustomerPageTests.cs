@@ -1,12 +1,12 @@
 ﻿using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class CustomerPageTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void GoToCustomerPage()
     {
       LoginPage.GoToLoginPage(driver).LoginAndGoToBES("roles.manager", "12345").GoToCustomerPage("455248674");

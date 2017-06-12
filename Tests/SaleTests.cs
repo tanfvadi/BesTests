@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class SaleTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void NewSale_WhenSubmitSale_SaleLogWillAddedToDiary()
     {
       CustomerPage lead = LoginAndCreateLead();
@@ -15,7 +15,7 @@ namespace BesTests.Tests
       Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.Sale));
     }
 
-    [TestMethod]
+    [Test]
     public void CancelSale()
     {
       CustomerPage lead = LoginAndCreateLead();
@@ -24,7 +24,7 @@ namespace BesTests.Tests
       Assert.IsTrue(lead.AllLogs.Any<DiaryLog>(a => a.LogType == CustomerPage.DiaryLogType.SaleCancelled));
     }
 
-    [TestMethod]
+    [Test]
     public void ChangeSale()
     {
       CustomerPage lead = LoginAndCreateLead();

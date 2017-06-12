@@ -6,14 +6,14 @@
 
 using System.Linq;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class TransferTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void TransferCustomer()
     {
       CustomerPage lead = LoginAndCreateLead();

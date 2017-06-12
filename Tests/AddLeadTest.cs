@@ -1,12 +1,11 @@
-﻿
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class AddLeadTest : BesTestsBase
     {
-        [TestMethod]
+        [Test]
         public void AddLead()
         {
             LoginAndGoToHome().GoToAddLead().FillNewLeadAndSave().RedFrameId();

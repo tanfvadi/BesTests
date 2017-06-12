@@ -31,7 +31,7 @@ namespace BesTests.Pages
             WaitForElement(By.Name("username"), 10).SendKeys("roles.manager");
             WaitForElement(By.Name("password"), 10).SendKeys("12345");
             WaitForElement(By.XPath("//span[text()='Log In']"), 10).Click();
-            //WaitForElement(By.XPath("//span[text()='School Management']"), 10).Click();
+            WaitForElement(By.XPath("//span[text()='School Management']"), 10).Click();
       new SelectElement(WaitForElement(By.Name("branchEntityID"), 10)).SelectByValue("26711");
             WaitForElement(By.CssSelector("[class='btn button-59']"), 10).Click();
       return new BesHomePage(driver);

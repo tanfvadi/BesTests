@@ -1,18 +1,17 @@
-﻿
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class SubTeacherTests : BesTestsBase
   {
-      [TestMethod]
+      [Test]
       public void AddSubTeacher()
       {
           LoginAndGoToHome().GoToEmployeesPage().ClickAdd().AddSubTeachers();
       }
 
-      [TestMethod]
+      [Test]
       public void DeleteSubTeacher()
       {
           LoginAndGoToHome().GoToEmployeesPage()

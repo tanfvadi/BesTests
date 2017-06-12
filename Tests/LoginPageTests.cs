@@ -5,14 +5,14 @@
 // Assembly location: C:\Users\vadim.t.ECB\Documents\Visual Studio 2015\Projects\PageObject3\PageObject3\bin\Debug\PageObject3.dll
 
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class LoginPageTests : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void LoginSuceessTest()
     {
       LoginPage.GoToLoginPage(driver).LoginAndGoToBES("roles.manager", "12345");

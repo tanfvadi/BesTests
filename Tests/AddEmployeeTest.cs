@@ -1,13 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class AddEmployeeTest : BesTestsBase
     {
         public string chars;
 
-        [TestMethod]
+        [Test]
         public void AddEmployee()
         {
              LoginAndGoToHome().GoToEmployeesPage().ClickAdd().FillNewEmployeeAndSave();

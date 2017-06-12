@@ -6,20 +6,20 @@
 
 using System;
 using BesTests.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-  [TestClass]
+    [TestFixture]
   public class WrongUsernameTest : BesTestsBase
   {
-    [TestMethod]
+    [Test]
     public void WrongUsername()
     {
       LoginPage loginPage = LoginPage.GoToLoginPage(driver);
       loginPage.LoginExpectingError("fffff", "12345");
       string username = loginPage.GetUsername();
-      Assert.AreEqual<string>("fffff", username);
+      Assert.AreEqual("fffff", username);
       Console.WriteLine("Wrong username " + username);
     }
   }

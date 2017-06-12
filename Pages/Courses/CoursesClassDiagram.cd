@@ -10,7 +10,7 @@
   <Class Name="BesTests.Pages.Courses.CourseRow">
     <Position X="4.25" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAgAACgAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACEAAAAACgAABAAAAAAIAAAAAAAABQAAAAAQAAAAAA=</HashCode>
       <FileName>Pages\Courses\CourseRow.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

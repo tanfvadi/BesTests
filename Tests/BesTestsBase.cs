@@ -1,20 +1,21 @@
 ﻿using BesTests.Pages;
 using BesTests.Pages.Meetings;
 using BesTests.Pages.Sales;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class BesTestsBase
     {
         protected IWebDriver driver;
 
         public TestContext TestContext { get; set; }
 
-        [TestInitialize]
+        [SetUp]
         public void OpenBrowser()
         {
             driver = new ChromeDriver();
@@ -54,20 +55,21 @@ namespace BesTests.Tests
             return GoToSetupMeetingPage().SetupMeeting();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void QuitBrowser()
         {
-            if (TestContext.CurrentTestOutcome == UnitTestOutcome.Failed)
+            if (TestContext.CurrentContext.Result.Outcome.Status != TestStatus.Passed)
             {
                 //Take the screenshot
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                Screenshot ss = ((ITakesScreenshot) driver).GetScreenshot();
                 //Save the screenshot
                 ss.SaveAsFile("C:/Users/vadim.t.ECB/Localexplorer.jpeg", ScreenshotImageFormat.Jpeg);
             }
-            if (TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
+            else // passed
             {
                 driver.Quit();
             }
+
 
         }
 

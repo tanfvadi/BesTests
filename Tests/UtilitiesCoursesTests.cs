@@ -1,26 +1,46 @@
-﻿using BesTests.Pages.Courses;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using BesTests.Pages.Courses;
+using System.Linq;
+using NUnit.Framework;
 
 namespace BesTests.Tests
 {
-    [TestClass]
+    [Category("Utilities")]
+    [TestFixture]
     public class UtilitiesCoursesTests : BesTestsBase
     {
         private CoursesPage utilitiesCourses;
 
-        [TestInitialize]
+        [SetUp]
         public  void GoToCourses()
         {
             utilitiesCourses = LoginAndGoToHome().GotoUtilitiesCourses();
         }
 
-        [TestMethod]
-        public void FindCourse()
+
+        [TestCase("assaf")]
+        public void FindCourse(string courseNameToFind)
         {
             var courseRows = utilitiesCourses
-                .CourseSection.SearchCourse("assaf")
+                .CourseSection.SearchCourse(courseNameToFind)
                 .Courses;
             Assert.AreEqual(6, courseRows.Count);
+        }
+
+
+        [Test]
+        public void SelectCourse()
+        {
+            var courseRow = utilitiesCourses
+                .CourseSection.Courses.First().Select();
+            Console.WriteLine(courseRow.CourseName);
+        }
+
+        [Test]
+        public void EditCourse()
+        {
+            var editCoursePopup = utilitiesCourses
+                .CourseSection.Courses.Last().EditCourse();
         }
     }
 }
