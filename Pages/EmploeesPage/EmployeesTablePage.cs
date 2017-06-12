@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace PageObject3.Pages.EmploeesPage
 {
@@ -52,6 +53,12 @@ namespace PageObject3.Pages.EmploeesPage
             RolesDropDownList.SelectByValue(valueToSelect.ToString());
             WaitUntil(o => EmployeesCount != oldCount, timeOutInSec: 3, throwExceptionIfTimeoutReached: false);
             return this;
+        }
+
+        public void SelectAllMessages()
+        {
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//input[@class='utilities-employees-msg-chk-all']")).Click();
         }
 
         public string EmployeesCount => WaitForElement(By.Id("utilities-employees-count-span")).Text;

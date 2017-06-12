@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
     <Compile Include="Pages\AddEditEmployeePage.cs" />
+    <Compile Include="Pages\CoursesPage.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeeRow.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeesTablePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />

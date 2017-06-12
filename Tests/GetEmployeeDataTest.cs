@@ -29,7 +29,7 @@ namespace PageObject3.Tests
       [TestMethod]
     public void SelectAllMessages()
     {
-      LoginAndGoToHome().GoToUserMessagePage().SelectAllMessages();
+      LoginAndGoToHome().GoToEmployeesPage().;
     }
 
     [TestMethod]

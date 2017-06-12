@@ -20,13 +20,13 @@ namespace PageObject3.Pages
     }
 
 
-    public List<UserMessagePage> UserMessage
-    {
-        get
-        {
-          return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, UserMessagePage>(rowWebElement => new UserMessagePage(rowWebElement, driver)).ToList<UserMessagePage>();
-        }
-    }
+    //public List<EmployeeRowPage> UserMessage
+    //{
+    //    get
+    //    {
+    //      return WaitForElements(By.CssSelector("input[type=checkbox][class='utilities-employees-msg-chk-all']"), 10).Select<IWebElement, UserMessagePage>(rowWebElement => new UserMessagePage(rowWebElement, driver)).ToList<UserMessagePage>();
+    //    }
+    //}
 
       public void GetRowsFromEmployeesPage()
       {

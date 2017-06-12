@@ -20,11 +20,7 @@ namespace PageObject3.Pages
         {
         }
 
-      public void SelectAllMessages()
-      {
-          Thread.Sleep(1000);
-          driver.FindElement(By.XPath("//input[@class='utilities-employees-msg-chk-all']")).Click();
-      }
+
 
         //public EmployeePage(IWebElement rowWebElement, IWebDriver driver)
         //{

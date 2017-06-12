@@ -47,12 +47,12 @@ namespace PageObject3.Pages
         //        return new AddEditEmployeePage(driver);
         //    }
 
-        public UserMessagePage GoToUserMessagePage()
-        {
-            WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
-            WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new UserMessagePage(driver);
-        }
+        //public UserMessagePage GoToUserMessagePage()
+        //{
+        //    WaitForElement(By.Id("btnBSchoolsUtilities"), 10).Click();
+        //    WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
+        //    return new UserMessagePage(driver);
+        //}
 
         
 
@@ -114,7 +114,7 @@ namespace PageObject3.Pages
 
         //public List<IWebElement> RowCells => _myName.FindElements(By.CssSelector("tr.gridRow")).ToList();
 
-        //public string Name => RowCells[4].Text;
+45        //public string Name => RowCells[4].Text;
 
         public void GetEmployeeData()
         {
