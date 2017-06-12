@@ -12,7 +12,7 @@ namespace BesTests.Pages.EmploeesPage
         public IEnumerable<IWebElement> rows;
 
         public EmployeeRowPage(IWebDriver driver)
-    : base(driver, By.XPath("//div[@class='utilities-employees-header']"))
+    : base(driver)
     {
     }
 

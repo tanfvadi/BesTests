@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="BesTests.Pages.Courses.CourseSection" Collapsed="true">
-    <Position X="8.75" Y="1.25" Width="1.5" />
+    <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>Pages\Courses\CourseColumn.cs</FileName>
+      <FileName>Pages\Courses\CourseSection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BesTests.Pages.Courses.CourseRow">
-    <Position X="1.75" Y="6.75" Width="2.5" />
+    <Position X="4.25" Y="1.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AACAAAgAACgAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAA=</HashCode>
       <FileName>Pages\Courses\CourseRow.cs</FileName>
@@ -18,7 +18,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BesTests.Pages.Courses.EditCoursePopup">
-    <Position X="5.5" Y="4" Width="2.25" />
+    <Position X="8.5" Y="4" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAQAggAIAAAAAAAAQACAAAAAAAAAAAAAAAQAQ=</HashCode>
       <FileName>Pages\Courses\EditCoursePopup.cs</FileName>
@@ -28,15 +28,25 @@
       <Property Name="TopicLessons" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="BesTests.Pages.Courses.CoursesPage">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Courses\CoursesPage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CourseSection" />
+    </ShowAsAssociation>
+  </Class>
   <Enum Name="BesTests.Pages.Courses.CourseType">
-    <Position X="5.25" Y="7.25" Width="1.5" />
+    <Position X="5.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAABAAAA=</HashCode>
       <FileName>Pages\Courses\CourseType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="BesTests.Pages.Courses.TopicLessons">
-    <Position X="5" Y="1.25" Width="2" />
+    <Position X="12" Y="4.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAIAAAAA=</HashCode>
       <FileName>Pages\Courses\TopicLessons.cs</FileName>

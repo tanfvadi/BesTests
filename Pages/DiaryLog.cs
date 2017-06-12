@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
+using BesTests.Pages.Alerts;
+using BesTests.Pages.Sales;
 using OpenQA.Selenium;
 
 namespace BesTests.Pages

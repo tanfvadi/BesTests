@@ -74,13 +74,13 @@
       <DependentUpon>BesTests.feature</DependentUpon>
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
-    <Compile Include="Pages\Courses\CourseColumn.cs" />
     <Compile Include="Pages\Courses\CourseRow.cs" />
+    <Compile Include="Pages\Courses\CourseSection.cs" />
+    <Compile Include="Pages\Courses\CoursesPage.cs" />
     <Compile Include="Pages\Courses\CourseType.cs" />
     <Compile Include="Pages\Courses\EditCoursePopup.cs" />
     <Compile Include="Pages\AddEditEmployeePage.cs" />
     <Compile Include="Pages\EmploeesPage\EmployeeRow.cs" />
-    <Compile Include="Pages\EmploeesPage\EmployeesTablePage.cs" />
     <Compile Include="Pages\EmploeesPage\UserBranchPage.cs" />
     <Compile Include="Pages\EmploeesPage\UserNamePage.cs" />
     <Compile Include="Pages\EmployeeRole.cs" />

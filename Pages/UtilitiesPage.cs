@@ -1,3 +1,4 @@
+using BesTests.Pages.Courses;
 using BesTests.Pages.EmploeesPage;
 using OpenQA.Selenium;
 
@@ -9,10 +10,16 @@ namespace BesTests.Pages
         {
         }
 
-        public EmployeesTablePage GotoUtilitiesEmployeesPage()
+        public EmployeesPage GotoEmployeesPage()
         {
             WaitForElement(By.Id("btnUtilitiesAddEmployee"), 10).Click();
-            return new EmployeesTablePage(driver);
+            return new EmployeesPage(driver);
+        }
+
+        public CoursesPage GotoCoursesPage()
+        {
+            WaitForElement(By.Id("btnUtilitiesAddCourse"), 10).Click();
+            return new CoursesPage(driver);
         }
     }
 }
