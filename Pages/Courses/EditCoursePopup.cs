@@ -1,6 +1,8 @@
-﻿namespace BesTests.Pages.Courses
+﻿using OpenQA.Selenium;
+
+namespace BesTests.Pages.Courses
 {
-    public class EditCoursePopup
+    public class EditCoursePopup : BasePage
     {
         public string Name
         {
@@ -87,6 +89,10 @@
         public CourseSection Cancel()
         {
             throw new System.NotImplementedException();
+        }
+
+        public EditCoursePopup(IWebDriver driver) : base(driver, By.CssSelector(".edit-btn.course"))
+        {
         }
     }
 }

@@ -46,12 +46,9 @@ namespace BesTests.Pages.Courses
         public EditCoursePopup EditCourse()
         {
            Actions action = new Actions(_driver);
-            var editButton = _rowElement.FindElement(By.CssSelector(".edit-btn.course"));
-            action
-                .MoveToElement(editButton)
-                .Click()
-                .Build()
-                .Perform();
+           var editButton = _rowElement.FindElement(By.CssSelector(".edit-btn.course"));
+            action.MoveToElement(_rowElement).Build().Perform();
+            editButton.Click();
            return new EditCoursePopup();
         }
     }

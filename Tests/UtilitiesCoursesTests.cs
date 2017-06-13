@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BesTests.Pages.Courses;
 using System.Linq;
 using NUnit.Framework;
@@ -10,6 +11,7 @@ namespace BesTests.Tests
     public class UtilitiesCoursesTests : BesTestsBase
     {
         private CoursesPage utilitiesCourses;
+        private CourseSection CourseSection => utilitiesCourses.CourseSection;
 
         [SetUp]
         public  void GoToCourses()
@@ -21,9 +23,7 @@ namespace BesTests.Tests
         [TestCase("assaf")]
         public void FindCourse(string courseNameToFind)
         {
-            var courseRows = utilitiesCourses
-                .CourseSection.SearchCourse(courseNameToFind)
-                .Courses;
+            var courseRows = CourseSection.SearchCourse(courseNameToFind).Courses;
             Assert.AreEqual(6, courseRows.Count);
         }
 
@@ -31,40 +31,38 @@ namespace BesTests.Tests
         [Test]
         public void SelectCourse()
         {
-            var courseRow = utilitiesCourses
-                .CourseSection.Courses.First().Select();
+            var courseRow = CourseSection.Courses.First().Select();
             Console.WriteLine(courseRow.CourseName);
         }
 
         [Test]
         public void EditCourse()
         {
-            var editCoursePopup = utilitiesCourses
-                .CourseSection.Courses.First().EditCourse();
+            var editCoursePopup = CourseSection.Courses.First().EditCourse();
         }
 
         [Test]
         public void GetCourseId()
         {
-            var courseRow = utilitiesCourses
-                .CourseSection.Courses.First().CourseId;
+            var courseRow = CourseSection.Courses.First().CourseId;
             //Console.WriteLine(courseRow.Last().);
         }
 
         [Test]
         public void IsChecked()
         {
-            var courseRow = utilitiesCourses
-                .CourseSection.Courses.First().IsChecked();
+            var courseRow = CourseSection.Courses.First().IsChecked();
         }
 
         [Test]
         public void PrintCourseNames()
         {
-            var courseNames = utilitiesCourses
-                .CourseSection
-                .PrintAllCourses();
-
+            CourseSection.SearchCourse("vadim");
+            IEnumerable<string> courseNames = CourseSection.Courses.Select(row => row.CourseName);
+            foreach (var courseName in courseNames)
+            {
+                Console.WriteLine(courseName);
+            }   
         }
     }
 }

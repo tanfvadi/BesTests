@@ -25,12 +25,7 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-        public CourseSection PrintAllCourses()
-        {
-            var courseNames=WaitForElement(By.CssSelector(".course-column")).Text;
-            Console.WriteLine(courseNames);
-            return this;
-        }
+        
 
         
     }
