@@ -91,7 +91,7 @@ namespace BesTests.Pages.Courses
             throw new System.NotImplementedException();
         }
 
-        public EditCoursePopup(IWebDriver driver) : base(driver, By.CssSelector(".edit-btn.course"))
+        public EditCoursePopup(IWebDriver driver) : base(driver, By.XPath("//div[@class='header' and text()='Edit Course']"))
         {
         }
     }

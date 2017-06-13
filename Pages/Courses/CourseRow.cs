@@ -7,20 +7,20 @@ namespace BesTests.Pages.Courses
 {
     public class CourseRow
     {
-        private readonly IWebElement _rowElement;
-        private readonly IWebDriver _driver;
+        private readonly IWebElement rowElement;
+        private readonly IWebDriver driver;
         
 
         public CourseRow(IWebElement rowElement,IWebDriver driver)
         {
-            _rowElement = rowElement;
-            _driver = driver;
+            this.rowElement = rowElement;
+            this.driver = driver;
         }
 
-        public string CourseName => _rowElement.FindElement(By.CssSelector("div.course-name")).Text;
+        public string CourseName => rowElement.FindElement(By.CssSelector("div.course-name")).Text;
         
 
-        public string CourseId => _rowElement.FindElement(By.CssSelector("label['data-courseid']")).Text;
+        public string CourseId => rowElement.FindElement(By.CssSelector("label['data-courseid']")).Text;
         
         public CourseType CourseType
         {
@@ -33,23 +33,23 @@ namespace BesTests.Pages.Courses
 
         public CourseRow Select()
         {
-            _rowElement.Click();
+            rowElement.Click();
             return this;
         }
 
         public bool IsChecked()
         {
-          return _rowElement.FindElement(By.CssSelector("input[type='radio']")).Selected;
+          return rowElement.FindElement(By.CssSelector("input[type='radio']")).Selected;
 
         }
 
         public EditCoursePopup EditCourse()
         {
-           Actions action = new Actions(_driver);
-           var editButton = _rowElement.FindElement(By.CssSelector(".edit-btn.course"));
-            action.MoveToElement(_rowElement).Build().Perform();
+           Actions action = new Actions(driver);
+           var editButton = rowElement.FindElement(By.CssSelector(".edit-btn.course"));
+            action.MoveToElement(rowElement).Build().Perform();
             editButton.Click();
-           return new EditCoursePopup();
+           return new EditCoursePopup(driver);
         }
     }
 }
