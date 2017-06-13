@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
+using TechTalk.SpecFlow.Bindings;
 
 namespace BesTests.Pages.Courses
 {
@@ -23,6 +25,13 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-   
+        public CourseSection PrintAllCourses()
+        {
+            var courseNames=WaitForElement(By.CssSelector(".course-column")).Text;
+            Console.WriteLine(courseNames);
+            return this;
+        }
+
+        
     }
 }

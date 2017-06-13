@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
 namespace BesTests.Pages.Courses
@@ -16,6 +18,7 @@ namespace BesTests.Pages.Courses
         }
 
         public string CourseName => _rowElement.FindElement(By.CssSelector("div.course-name")).Text;
+        
 
         public string CourseId => _rowElement.FindElement(By.CssSelector("label['data-courseid']")).Text;
         

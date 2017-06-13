@@ -52,10 +52,19 @@ namespace BesTests.Tests
         }
 
         [Test]
-        public void IsChacked()
+        public void IsChecked()
         {
             var courseRow = utilitiesCourses
                 .CourseSection.Courses.First().IsChecked();
+        }
+
+        [Test]
+        public void PrintCourseNames()
+        {
+            var courseNames = utilitiesCourses
+                .CourseSection
+                .PrintAllCourses();
+
         }
     }
 }
