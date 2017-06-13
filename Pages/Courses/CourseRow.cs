@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace BesTests.Pages.Courses
 {
@@ -6,6 +7,7 @@ namespace BesTests.Pages.Courses
     {
         private readonly IWebElement _rowElement;
         private readonly IWebDriver _driver;
+        
 
         public CourseRow(IWebElement rowElement,IWebDriver driver)
         {
@@ -15,14 +17,8 @@ namespace BesTests.Pages.Courses
 
         public string CourseName => _rowElement.FindElement(By.CssSelector("div.course-name")).Text;
 
-        public string CourseId => _rowElement.FindElement(By.CssSelector("label[data-courseid']")).Text;
-
-        public CourseRow CourseID()
-        {
-         
-            return this;
-        }
-
+        public string CourseId => _rowElement.FindElement(By.CssSelector("label['data-courseid']")).Text;
+        
         public CourseType CourseType
         {
             get
@@ -38,15 +34,22 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-        public CourseRow IsChecked()
+        public bool IsChecked()
         {
-            _rowElement.Selected.ToString();
-            return this;
+          return _rowElement.FindElement(By.CssSelector("input[type='radio']")).Selected;
+
         }
 
         public EditCoursePopup EditCourse()
         {
-            throw new System.NotImplementedException();
+           Actions action = new Actions(_driver);
+            var editButton = _rowElement.FindElement(By.CssSelector(".edit-btn.course"));
+            action
+                .MoveToElement(editButton)
+                .Click()
+                .Build()
+                .Perform();
+           return new EditCoursePopup();
         }
     }
 }

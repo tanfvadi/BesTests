@@ -22,6 +22,7 @@ namespace BesTests.Pages.Courses
             //WaitUntil(o => Courses.Count != oldCount);
             return this;
         }
-      
+
+   
     }
 }

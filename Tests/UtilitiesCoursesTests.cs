@@ -40,7 +40,22 @@ namespace BesTests.Tests
         public void EditCourse()
         {
             var editCoursePopup = utilitiesCourses
-                .CourseSection.Courses.Last().EditCourse();
+                .CourseSection.Courses.First().EditCourse();
+        }
+
+        [Test]
+        public void GetCourseId()
+        {
+            var courseRow = utilitiesCourses
+                .CourseSection.Courses.First().CourseId;
+            //Console.WriteLine(courseRow.Last().);
+        }
+
+        [Test]
+        public void IsChacked()
+        {
+            var courseRow = utilitiesCourses
+                .CourseSection.Courses.First().IsChecked();
         }
     }
 }
