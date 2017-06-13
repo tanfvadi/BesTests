@@ -18,10 +18,11 @@ namespace BesTests.Pages.Courses
         }
 
         public string CourseName => rowElement.FindElement(By.CssSelector("div.course-name")).Text;
-        
 
-        public string CourseId => rowElement.FindElement(By.CssSelector("label['data-courseid']")).Text;
-        
+
+        public string CourseId => rowElement.FindElement(By.XPath("//li[@data-course-id='5420']")).GetAttribute("data-course-id");
+
+
         public CourseType CourseType
         {
             get

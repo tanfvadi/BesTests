@@ -44,8 +44,10 @@ namespace BesTests.Tests
         [Test]
         public void GetCourseId()
         {
-            var courseRow = CourseSection.Courses.First().CourseId;
-            //Console.WriteLine(courseRow.Last().);
+            CourseSection.SearchCourse("Vadim");
+            var courseId = CourseSection.Courses.First().CourseId;
+            Console.WriteLine("The course ID of : " + CourseSection.Courses.First().CourseName + " Course is " + courseId);
+
         }
 
         [Test]
