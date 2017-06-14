@@ -72,7 +72,7 @@ namespace BesTests.Tests
         {
             CourseSection.SearchCourse("vadim f");
             var firstRow = CourseSection.Courses.First();
-            Console.WriteLine("The type of the course is " + firstRow.CourseType);
+            Console.WriteLine("The type of the course " + firstRow.CourseName + " is "  + firstRow.CourseType);
         }
 
         [Test]
