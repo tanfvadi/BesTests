@@ -10,12 +10,9 @@
   <Class Name="BesTests.Pages.Courses.CourseRow">
     <Position X="4.25" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACEAAAAACgAABAAAAAAIAAAAAAAABQAAAAAQAAAAAA=</HashCode>
+      <HashCode>AACEAAAAACBAAEAAAAAAAACAAAAAABAAAAAAQAAAAAA=</HashCode>
       <FileName>Pages\Courses\CourseRow.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="CourseType" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BesTests.Pages.Courses.EditCoursePopup">
     <Position X="8.5" Y="4" Width="2.25" />

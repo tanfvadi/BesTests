@@ -2,8 +2,8 @@
 {
     public enum CourseType
     {
-        Fixed,
-        Flexible,
-        Private
+        Fixed = 1,
+        Flexible= 2,
+        Private =3
     }
 }

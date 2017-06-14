@@ -16,6 +16,10 @@ namespace BesTests.Pages.Courses
         public List<CourseRow> Courses => 
             FindElementsByCss<CourseRow>("li.course:not(.hidden)");
 
+        public List<CourseRow> FixedCourses => Courses.Where(a=>a.CourseType== CourseType.Fixed).ToList();
+        public List<CourseRow> FlexibleCourses => Courses.Where(a => a.CourseType == CourseType.Flexible).ToList();
+        public List<CourseRow> PrivateCourses=> Courses.Where(a => a.CourseType == CourseType.Private).ToList();
+
 
         public CourseSection SearchCourse(string courseName)
         {
@@ -25,8 +29,9 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-        
-
-        
+        public CourseRow FindFirstCourse(CourseType courseType)
+        {
+            return Courses.First(a => a.CourseType == courseType);
+        }
     }
 }

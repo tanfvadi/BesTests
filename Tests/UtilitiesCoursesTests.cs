@@ -66,5 +66,22 @@ namespace BesTests.Tests
                 Console.WriteLine(courseName);
             }   
         }
+
+        [Test]
+        public void TypeOfFirstCourse()
+        {
+            CourseSection.SearchCourse("vadim f");
+            var firstRow = CourseSection.Courses.First();
+            Console.WriteLine("The type of the course is " + firstRow.CourseType);
+        }
+
+        [Test]
+        public void FindFirstCourseByType()
+        {
+            var firstFixed = CourseSection.FindFirstCourse(CourseType.Fixed);
+            var firstFlex = CourseSection.FindFirstCourse(CourseType.Flexible);
+            var firstPrivate = CourseSection.PrivateCourses.First();
+            Assert.AreEqual(CourseType.Private,firstPrivate.CourseType);
+        }
     }
 }
