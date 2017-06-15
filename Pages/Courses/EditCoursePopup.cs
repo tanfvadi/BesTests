@@ -20,7 +20,7 @@ namespace BesTests.Pages.Courses
 
         public TopicLessons TopicLessons =>(TopicLessons)int.Parse(popupElement.GetAttribute("topic-lessons"));
 
-        public CourseType CourseType => (CourseType)int.Parse(popupElement.GetAttribute("type"));
+        //public CourseType CourseType => (CourseType)int.Parse(popupElement.GetAttribute("type"));
 
         public EditCoursePopup Name()
         {
@@ -43,12 +43,12 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-        //public EditCoursePopup CourseType()
-        //{
-        //    var type = WaitForElement(By.Id("type"), 10).Text;
-        //    Console.WriteLine(type);
-        //    return this;
-        //}
+        public EditCoursePopup CourseType()
+        {
+            var type = WaitForElement(By.Id("type"), 10).Text;
+            Console.WriteLine("Course type : " + type);
+            return this;
+        }
 
         //public EditCoursePopup TopicLessons()
         //{

@@ -65,10 +65,10 @@ namespace BesTests.Tests
                 //Save the screenshot
                 ss.SaveAsFile("C:/Users/vadim.t.ECB/Localexplorer.jpeg", ScreenshotImageFormat.Jpeg);
             }
-            //else // passed
-            //{
-            //    driver.Quit();
-            //}
+            else // passed
+            {
+                driver.Quit();
+            }
 
 
         }

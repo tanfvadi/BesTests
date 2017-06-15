@@ -90,6 +90,7 @@ namespace BesTests.Tests
         [Test]
         public void EditCoursePopupData()
         {
+            CourseSection.SearchCourse("vadim");
             CourseSection
                 .Courses
                 .First()
@@ -98,7 +99,8 @@ namespace BesTests.Tests
                 .Description()
                 .Currency()
                 .NotSalable()
-                .SalableOnlyInPackage();
+                .SalableOnlyInPackage()
+                .CourseType();
         }
 
         [Test]
