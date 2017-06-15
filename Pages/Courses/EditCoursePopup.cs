@@ -5,6 +5,11 @@ namespace BesTests.Pages.Courses
 {
     public class EditCoursePopup:BasePage
     {
+
+        public EditCoursePopup(IWebDriver driver) : base(driver, By.XPath("//div[@class='header' and text()='Edit Course']"))
+        {
+        }
+
         private readonly IWebDriver driver;
         private readonly IWebElement popupElement;
         //public EditCoursePopup(IWebElement popupElement, IWebDriver driver)
@@ -19,14 +24,14 @@ namespace BesTests.Pages.Courses
 
         public EditCoursePopup Name()
         {
-            var name=WaitForElement(By.Id("courseName"), 10).Text;
-            Console.WriteLine(name);
+            var name=WaitForElement(By.Id("courseName"), 10).GetAttribute("value");
+            Console.WriteLine("Course name: " + name);
             return this;
         }
         public EditCoursePopup Description()
         {
-            var desc= WaitForElement(By.Id("description"), 10).Text;
-            Console.WriteLine(desc);
+            var desc= WaitForElement(By.Id("description"), 10).GetAttribute("value");
+            Console.WriteLine("Description: " + desc);
             return this;
         }
 
@@ -34,13 +39,13 @@ namespace BesTests.Pages.Courses
         {
 
             var cur=WaitForElement(By.Id("currency"), 10).Text;
-            Console.WriteLine(cur);
+            Console.WriteLine("Currency : " + cur);
             return this;
         }
 
         //public EditCoursePopup CourseType()
         //{
-        //    var type=WaitForElement(By.Id("type"), 10).Text;
+        //    var type = WaitForElement(By.Id("type"), 10).Text;
         //    Console.WriteLine(type);
         //    return this;
         //}
@@ -54,19 +59,22 @@ namespace BesTests.Pages.Courses
         public EditCoursePopup SalableOnlyInPackage()
         {
             WaitForElement(By.Id("courseIsSalableOnlyInPackage")).Click();
+            Console.WriteLine("Salable Only In Package option is selected");
             return this;
         }
 
         public EditCoursePopup NotSalable()
         {
             WaitForElement(By.Id("courseIsNotSalable")).Click();
+            Console.WriteLine("Not Salable option is selected");
             return this;
 
         }
 
         public CourseSection Save()
         {
-            throw new System.NotImplementedException();
+            WaitForElement(By.Id("save-btn")).Click();
+            return new CourseSection(driver);
         }
 
         public CourseSection Cancel()
@@ -81,8 +89,6 @@ namespace BesTests.Pages.Courses
 
         }
 
-        public EditCoursePopup(IWebDriver driver) : base(driver, By.XPath("//div[@class='header' and text()='Edit Course']"))
-        {
-        }
+
     }
 }

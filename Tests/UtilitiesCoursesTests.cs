@@ -11,14 +11,17 @@ namespace BesTests.Tests
     public class UtilitiesCoursesTests : BesTestsBase
     {
         private CoursesPage utilitiesCourses;
+
+        private EditCoursePopup editCoursesPage;
+
         private CourseSection CourseSection => utilitiesCourses.CourseSection;
+       // private EditCoursePopup EditCoursePopup => utilitiesCourses.EditCoursePopup.Name;
 
         [SetUp]
         public  void GoToCourses()
         {
             utilitiesCourses = LoginAndGoToHome().GotoUtilitiesCourses();
         }
-
 
         [TestCase("assaf")]
         public void FindCourse(string courseNameToFind)
@@ -83,5 +86,29 @@ namespace BesTests.Tests
             var firstPrivate = CourseSection.PrivateCourses.First();
             Assert.AreEqual(CourseType.Private,firstPrivate.CourseType);
         }
+
+        [Test]
+        public void EditCoursePopupData()
+        {
+            CourseSection
+                .Courses
+                .First()
+                .EditCourse()
+                .Name()
+                .Description()
+                .Currency()
+                .NotSalable()
+                .SalableOnlyInPackage();
+        }
+
+        [Test]
+        public void EditCoursePopupCourseType()
+        {
+            var firstFixed = CourseSection.FindFirstCourse(CourseType.Fixed);
+            var firstFlex = CourseSection.FindFirstCourse(CourseType.Flexible);
+            var firstPrivate = CourseSection.PrivateCourses.First();
+            Assert.AreEqual(CourseType.Private, firstPrivate.CourseType);
+        }
     }
 }
+

@@ -10,5 +10,7 @@ namespace BesTests.Pages.Courses
         }
 
         public CourseSection CourseSection => new CourseSection(driver);
+
+        public EditCoursePopup EditCoursePopup => new EditCoursePopup(driver);
     }
 }
