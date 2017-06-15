@@ -1,84 +1,67 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 
 namespace BesTests.Pages.Courses
 {
-    public class EditCoursePopup : BasePage
+    public class EditCoursePopup:BasePage
     {
-        public string Name
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        private readonly IWebDriver driver;
+        private readonly IWebElement popupElement;
+        //public EditCoursePopup(IWebElement popupElement, IWebDriver driver)
+        //{
+        //    this.popupElement = popupElement;
+        //    this.driver = driver;
+        //}
 
-            set
-            {
-            }
+        public TopicLessons TopicLessons =>(TopicLessons)int.Parse(popupElement.GetAttribute("topic-lessons"));
+
+        public CourseType CourseType => (CourseType)int.Parse(popupElement.GetAttribute("type"));
+
+        public EditCoursePopup Name()
+        {
+            var name=WaitForElement(By.Id("courseName"), 10).Text;
+            Console.WriteLine(name);
+            return this;
+        }
+        public EditCoursePopup Description()
+        {
+            var desc= WaitForElement(By.Id("description"), 10).Text;
+            Console.WriteLine(desc);
+            return this;
         }
 
-        public string Description
+        public EditCoursePopup Currency()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
 
-            set
-            {
-            }
+            var cur=WaitForElement(By.Id("currency"), 10).Text;
+            Console.WriteLine(cur);
+            return this;
         }
 
-        public string Currency
+        //public EditCoursePopup CourseType()
+        //{
+        //    var type=WaitForElement(By.Id("type"), 10).Text;
+        //    Console.WriteLine(type);
+        //    return this;
+        //}
+
+        //public EditCoursePopup TopicLessons()
+        //{
+        //    WaitForElement(By.Id("topic-lessons"), 10).Click();
+        //    return this;
+        //}
+
+        public EditCoursePopup SalableOnlyInPackage()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            
+            WaitForElement(By.Id("courseIsSalableOnlyInPackage")).Click();
+            return this;
         }
 
-        public CourseType CourseType
+        public EditCoursePopup NotSalable()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-        }
+            WaitForElement(By.Id("courseIsNotSalable")).Click();
+            return this;
 
-        public TopicLessons TopicLessons
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public bool SalableOnlyInPackage
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public bool NotSalable
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
         }
 
         public CourseSection Save()
@@ -88,7 +71,14 @@ namespace BesTests.Pages.Courses
 
         public CourseSection Cancel()
         {
-            throw new System.NotImplementedException();
+            var cancel=WaitForElement(By.Id("cancel-btn")).Displayed;
+            if (cancel)
+            {
+                Console.WriteLine("The Cancel button is appear");
+            }
+            Console.WriteLine("The Cancel button is not appear");          
+            return new CourseSection(driver);
+
         }
 
         public EditCoursePopup(IWebDriver driver) : base(driver, By.XPath("//div[@class='header' and text()='Edit Course']"))

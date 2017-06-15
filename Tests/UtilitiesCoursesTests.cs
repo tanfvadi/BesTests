@@ -70,9 +70,9 @@ namespace BesTests.Tests
         [Test]
         public void TypeOfFirstCourse()
         {
-            CourseSection.SearchCourse("vadim f");
+            CourseSection.SearchCourse("vadim");
             var firstRow = CourseSection.Courses.First();
-            Console.WriteLine("The type of the course " + firstRow.CourseName + " is "  + firstRow.CourseType);
+            Console.WriteLine(" The type of " + firstRow.CourseName + " course is " + firstRow.CourseType);
         }
 
         [Test]

@@ -3,25 +3,24 @@
   <Class Name="BesTests.Pages.Courses.CourseSection" Collapsed="true">
     <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAEAABAAAAAAAAAAAAAAAAAEABAAAAQ=</HashCode>
       <FileName>Pages\Courses\CourseSection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BesTests.Pages.Courses.CourseRow">
     <Position X="4.25" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACEAAAAACBAAEAAAAAAAACAAAAAABAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AACEAAAAAChAAAAAAAAAAACAAAAAABAAAAAAQAAAAAA=</HashCode>
       <FileName>Pages\Courses\CourseRow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BesTests.Pages.Courses.EditCoursePopup">
     <Position X="8.5" Y="4" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAQAggAIAAAAAAAAQACAAAAAAAAAAAAAAAQAQ=</HashCode>
+      <HashCode>AAAAAIAAQAggAIAAAAAAAASACAAAAAAAAAAAAAAAQEQ=</HashCode>
       <FileName>Pages\Courses\EditCoursePopup.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CourseType" />
       <Property Name="TopicLessons" />
     </ShowAsAssociation>
   </Class>
