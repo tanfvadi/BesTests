@@ -20,14 +20,11 @@
       <HashCode>AAAAAIAAQAggAIAAAAAAAASACAAAAAAAAAAAAAAAQEQ=</HashCode>
       <FileName>Pages\Courses\EditCoursePopup.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="TopicLessons" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BesTests.Pages.Courses.CoursesPage">
     <Position X="1.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pages\Courses\CoursesPage.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

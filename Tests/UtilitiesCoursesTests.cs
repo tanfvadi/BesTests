@@ -100,17 +100,25 @@ namespace BesTests.Tests
                 .Currency()
                 .NotSalable()
                 .SalableOnlyInPackage()
-                .CourseType();
+                .CourseType()
+                .TopicLessons()
+                // .Cancel()
+                .Save();
+
         }
 
         [Test]
-        public void EditCoursePopupCourseType()
+        public void CheckIfRadioButtonsChecked()
         {
-            var firstFixed = CourseSection.FindFirstCourse(CourseType.Fixed);
-            var firstFlex = CourseSection.FindFirstCourse(CourseType.Flexible);
-            var firstPrivate = CourseSection.PrivateCourses.First();
-            Assert.AreEqual(CourseType.Private, firstPrivate.CourseType);
+            CourseSection
+                .Courses
+                .First()
+                .EditCourse()
+                .CheckIfNotSalableIsChecked()
+                .CheckIfSalableOnlyInPackageIsChecked();
+
         }
+
     }
 }
 
