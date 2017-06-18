@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BesTests.Pages.Courses;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace BesTests.Tests
 {
@@ -99,14 +100,14 @@ namespace BesTests.Tests
             var editCoursePopup = courseRow
                 .EditCourse();
 
-            Console.WriteLine("Name Before change: " + editCoursePopup.Name);
+            Console.WriteLine("Name Before changing: " + editCoursePopup.Name);
             editCoursePopup.Name = " NEW NAME ";
-            Console.WriteLine("Name After change: " + editCoursePopup.Name);
+            Console.WriteLine("Name After changing: " + editCoursePopup.Name);
             Console.WriteLine("-------------------------------------------------------");
 
-            Console.WriteLine("Description Before change: " + editCoursePopup.Description);
+            Console.WriteLine("Description Before changing: " + editCoursePopup.Description);
             editCoursePopup.Description = " NEW Description";
-            Console.WriteLine("Description After change: " + editCoursePopup.Description);
+            Console.WriteLine("Description After changing: " + editCoursePopup.Description);
             Console.WriteLine("-------------------------------------------------------");
 
             Console.WriteLine("Currency: " + editCoursePopup.Currency);
@@ -115,9 +116,9 @@ namespace BesTests.Tests
             Console.WriteLine("Course type: " + editCoursePopup.CourseType);
             Console.WriteLine("-------------------------------------------------------");
 
-            Console.WriteLine("Topic lessons before change: " + editCoursePopup.TopicLessons);
+            Console.WriteLine("Topic lessons before changing: " + editCoursePopup.TopicLessons);
             editCoursePopup.TopicLessons = TopicLessons.TopicLessonsAdvanced;
-            Console.WriteLine("Topic lessons after change: " + editCoursePopup.TopicLessons);
+            Console.WriteLine("Topic lessons after changing: " + editCoursePopup.TopicLessons);
             Console.WriteLine("-------------------------------------------------------");
 
             editCoursePopup.CheckIfSalableOnlyInPackageIsChecked();
@@ -126,23 +127,23 @@ namespace BesTests.Tests
             editCoursePopup.CheckIfNotSalableIsChecked();
             Console.WriteLine("-------------------------------------------------------");
 
+            editCoursePopup.NotSalable();
+
             editCoursePopup.Save();
 
-            editCoursePopup.Cancel();
+    }
 
-            //CourseSection
-            //  .Courses
-            //  .First()
-            //editCoursePopup
-            //.Name
-            //.Description()
-            //.Currency()
-            //.NotSalable()
-            //.SalableOnlyInPackage()
-            //.PrintCourseType()
-            //.SelectLastTopicLessons()
-            //.Cancel()
-            //.Save();
+        [Test]
+
+        public void ClickOnCancelButtn()
+        {
+            var courseRow = CourseSection
+                .Courses
+                .First();
+
+            var editCoursePopup = courseRow
+                .EditCourse();
+            editCoursePopup.Cancel();
         }
 
 

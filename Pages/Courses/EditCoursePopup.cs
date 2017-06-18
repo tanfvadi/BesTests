@@ -127,7 +127,7 @@ namespace BesTests.Pages.Courses
         public EditCoursePopup NotSalable()
         {
             WaitForElement(By.Id("courseIsNotSalable")).Click();
-            Console.WriteLine("Not Salable option is selected");
+            Console.WriteLine("After selecting-not Salable option is selected");
             return this;
 
         }
