@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace BesTests.Pages.Courses
 {
@@ -12,8 +13,8 @@ namespace BesTests.Pages.Courses
         {
         }
 
-        private readonly IWebDriver driver;
-        private readonly IWebElement popupElement;
+        //private readonly IWebDriver driver;
+        //private readonly IWebElement popupElement;
         //public EditCoursePopup(IWebElement popupElement, IWebDriver driver)
         //{
         //    this.popupElement = popupElement;
@@ -24,41 +25,72 @@ namespace BesTests.Pages.Courses
 
         //public CourseType CourseType => (CourseType)int.Parse(popupElement.GetAttribute("type"));
 
-        public EditCoursePopup Name()
+        public EditCoursePopup PrintName()
         {
-            var name=WaitForElement(By.Id("courseName"), 10).GetAttribute("value");
-            Console.WriteLine("Course name: " + name);
-            return this;
-        }
-        public EditCoursePopup Description()
-        {
-            var desc= WaitForElement(By.Id("description"), 10).GetAttribute("value");
-            Console.WriteLine("Description: " + desc);
+            Console.WriteLine(Name);
             return this;
         }
 
-        public EditCoursePopup Currency()
+        
+        public string Name
         {
-
-            var cur=WaitForElement(By.Id("currency"), 10).Text;
-            Console.WriteLine("Currency : " + cur);
-            return this;
+            get
+            {
+                return GetValue(By.Id("courseName"));
+            }
+            set
+            {
+                FillText(By.Id("courseName"), value);
+            }
         }
 
-        public EditCoursePopup CourseType()
+
+        public string Description
         {
-            var type = WaitForElement(By.Id("type"), 10).Text;
-            Console.WriteLine("Course type : " + type);
-            return this;
+            get
+            {
+                return GetValue(By.Id("description"));
+
+            }         
+            set
+            {
+            FillText(By.Id("description"), value);
+
+            }
         }
 
-        public EditCoursePopup TopicLessons()
+        public string Currency
         {
-            WaitForElement(By.Id("topic-lessons"), 10).Click();
-            new SelectElement(WaitForElement(By.Id("topic-lessons"), 10)).SelectByIndex(3);
-            Save();
-            return this;
+            get
+            {
+                //return GetTe(By.Id("currency"));
+                return WaitForElement(By.Id("currency")).Text;
+            }
         }
+
+        public string CourseType
+        {
+            get
+            {
+                return WaitForElement(By.Id("type")).Text;
+            }
+        }
+
+        public TopicLessons TopicLessons
+        {
+            get
+            {
+                //Return selected option parsed to enum TopicLessons
+                var value = int.Parse(FindDropDown(By.Id("topic-lessons")).SelectedOption.GetValue());
+                return (TopicLessons) value;
+            }
+            set
+            {
+                //Select option from combo box by enum value
+                FindDropDown(By.Id("topic-lessons")).SelectByValue(((int)value).ToString());
+            }
+        }
+
 
         public EditCoursePopup SalableOnlyInPackage()
         {
@@ -91,6 +123,7 @@ namespace BesTests.Pages.Courses
             }
             return this;
         }
+
         public EditCoursePopup NotSalable()
         {
             WaitForElement(By.Id("courseIsNotSalable")).Click();
@@ -102,23 +135,15 @@ namespace BesTests.Pages.Courses
         public CourseSection Save()
         {
             WaitForElement(By.Id("save-btn")).Click();
-            //Thread.Sleep(1000);
             WaitForElement(By.ClassName("confirm")).Click();
             return new CourseSection(driver);
         }
 
         public CourseSection Cancel()
         {
-            var cancel=WaitForElement(By.Id("cancel-btn")).Displayed;
-            if (cancel)
-            {
-                Console.WriteLine("The Cancel button is appear");
-            }
-            Console.WriteLine("The Cancel button is not appear");          
+            WaitForElement(By.Id("cancel-btn")).Click();         
             return new CourseSection(driver);
-
         }
-
 
     }
 }

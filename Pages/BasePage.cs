@@ -19,7 +19,6 @@ namespace BesTests.Pages
             VerifyPageLoaded(pageLoadedTimeout);
             WaitUntilElementNotVisible(By.Id("calendar-loader"), 10, null);
         }
-
         protected string PageName => GetType().Name;
 
         protected void CheckAvailibility()
@@ -50,6 +49,10 @@ namespace BesTests.Pages
             return elementsToReturn;
         }
 
+        protected string GetValue(By @by)
+        {
+            return WaitForElement(@by).GetAttribute("value");
+        }
         protected void VerifyPageLoaded(int timeoutInSec = 10)
         {
             string messageIfFailed = "Page: " + PageName + " was not loaded!!";
@@ -112,6 +115,19 @@ namespace BesTests.Pages
             if (messageIfFailed != null)
                 webDriverWait.Message = messageIfFailed;
             return webDriverWait;
+        }
+
+        protected IWebElement FillText(By @by, string text)
+        {
+            var element = WaitForElement(@by);
+            element.ClearAndFill(text);
+            return element;
+        }
+
+        protected SelectElement FindDropDown(By @by)
+        {
+            var element = WaitForElement(@by);
+            return new SelectElement(element);
         }
     }
 }

@@ -67,7 +67,7 @@ namespace BesTests.Tests
             foreach (var courseName in courseNames)
             {
                 Console.WriteLine(courseName);
-            }   
+            }
         }
 
         [Test]
@@ -85,27 +85,66 @@ namespace BesTests.Tests
             var firstFlex = CourseSection.FindFirstCourse(CourseType.Flexible);
             var firstPrivate = CourseSection.PrivateCourses.First();
             Assert.AreEqual(CourseType.Private,firstPrivate.CourseType);
+            Console.WriteLine(firstPrivate.CourseType);
         }
 
         [Test]
-        public void EditCoursePopupData()
+        public void EditCourseData()
         {
-            CourseSection.SearchCourse("vadim");
-            CourseSection
+            //CourseSection.SearchCourse("private");
+            var courseRow = CourseSection
                 .Courses
-                .First()
-                .EditCourse()
-                .Name()
-                .Description()
-                .Currency()
-                .NotSalable()
-                .SalableOnlyInPackage()
-                .CourseType()
-                .TopicLessons()
-                // .Cancel()
-                .Save();
+                .First();
 
+            var editCoursePopup = courseRow
+                .EditCourse();
+
+            Console.WriteLine("Name Before change: " + editCoursePopup.Name);
+            editCoursePopup.Name = " NEW NAME ";
+            Console.WriteLine("Name After change: " + editCoursePopup.Name);
+            Console.WriteLine("-------------------------------------------------------");
+
+            Console.WriteLine("Description Before change: " + editCoursePopup.Description);
+            editCoursePopup.Description = " NEW Description";
+            Console.WriteLine("Description After change: " + editCoursePopup.Description);
+            Console.WriteLine("-------------------------------------------------------");
+
+            Console.WriteLine("Currency: " + editCoursePopup.Currency);
+            Console.WriteLine("-------------------------------------------------------");
+
+            Console.WriteLine("Course type: " + editCoursePopup.CourseType);
+            Console.WriteLine("-------------------------------------------------------");
+
+            Console.WriteLine("Topic lessons before change: " + editCoursePopup.TopicLessons);
+            editCoursePopup.TopicLessons = TopicLessons.TopicLessonsAdvanced;
+            Console.WriteLine("Topic lessons after change: " + editCoursePopup.TopicLessons);
+            Console.WriteLine("-------------------------------------------------------");
+
+            editCoursePopup.CheckIfSalableOnlyInPackageIsChecked();
+            Console.WriteLine("-------------------------------------------------------");
+
+            editCoursePopup.CheckIfNotSalableIsChecked();
+            Console.WriteLine("-------------------------------------------------------");
+
+            editCoursePopup.Save();
+
+            editCoursePopup.Cancel();
+
+            //CourseSection
+            //  .Courses
+            //  .First()
+            //editCoursePopup
+            //.Name
+            //.Description()
+            //.Currency()
+            //.NotSalable()
+            //.SalableOnlyInPackage()
+            //.PrintCourseType()
+            //.SelectLastTopicLessons()
+            //.Cancel()
+            //.Save();
         }
+
 
         [Test]
         public void CheckIfRadioButtonsChecked()
@@ -118,6 +157,18 @@ namespace BesTests.Tests
                 .CheckIfSalableOnlyInPackageIsChecked();
 
         }
+
+        //[Test]
+        //public void CheckTopicLessons()
+        //{
+        //    var courseRow = CourseSection
+        //        .Courses
+        //        .First();
+        //    var editCoursePopup = courseRow
+        //        .EditCourse().TopicLessons == TopicLessons.TopicLessonsAdvanced;
+        //    //Assert.AreEqual(TopicLessons.TopicLessonsAdvanced, );
+        //    //Console.WriteLine(courseRow.TopicLessons == TopicLessons.TopicLessonsAdvanced);
+        //}
 
     }
 }

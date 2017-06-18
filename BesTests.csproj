@@ -73,6 +73,7 @@
       <DependentUpon>BesTests.feature</DependentUpon>
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
+    <Compile Include="WebElementExtensions.cs" />
     <Compile Include="Pages\Courses\CourseRow.cs" />
     <Compile Include="Pages\Courses\CourseSection.cs" />
     <Compile Include="Pages\Courses\CoursesPage.cs" />

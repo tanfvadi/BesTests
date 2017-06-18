@@ -18,7 +18,9 @@ namespace BesTests.Pages.Courses
         public string CourseId => rowElement.GetAttribute("data-course-id");
         public string CourseName => rowElement.FindElement(By.CssSelector("div.course-name")).Text;
         public CourseType CourseType => (CourseType)int.Parse(rowElement.GetAttribute("data-course-type"));
-        
+
+        public TopicLessons TopicLessons=> (TopicLessons)int.Parse(rowElement.GetAttribute("id"));
+
         public EditCoursePopup EditCourse()
         {
             Actions action = new Actions(driver);
