@@ -6,10 +6,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace BesTests.Pages.Courses
 {
-    public class EditCoursePopup:BasePage
+    public class EditCoursePopup : BasePage
     {
 
-        public EditCoursePopup(IWebDriver driver) : base(driver, By.XPath("//div[@class='header' and text()='Edit Course']"))
+        public EditCoursePopup(IWebDriver driver) : base(driver,
+            By.XPath("//div[@class='header' and text()='Edit Course']"))
         {
         }
 
@@ -31,32 +32,18 @@ namespace BesTests.Pages.Courses
             return this;
         }
 
-        
+
         public string Name
         {
-            get
-            {
-                return GetValue(By.Id("courseName"));
-            }
-            set
-            {
-                FillText(By.Id("courseName"), value);
-            }
+            get { return GetValue(By.Id("courseName")); }
+            set { FillText(By.Id("courseName"), value); }
         }
 
 
         public string Description
         {
-            get
-            {
-                return GetValue(By.Id("description"));
-
-            }         
-            set
-            {
-            FillText(By.Id("description"), value);
-
-            }
+            get { return GetValue(By.Id("description")); }
+            set { FillText(By.Id("description"), value); }
         }
 
         public string Currency
@@ -70,10 +57,7 @@ namespace BesTests.Pages.Courses
 
         public string CourseType
         {
-            get
-            {
-                return WaitForElement(By.Id("type")).Text;
-            }
+            get { return WaitForElement(By.Id("type")).Text; }
         }
 
         public TopicLessons TopicLessons
@@ -87,12 +71,28 @@ namespace BesTests.Pages.Courses
             set
             {
                 //Select option from combo box by enum value
-                FindDropDown(By.Id("topic-lessons")).SelectByValue(((int)value).ToString());
+                FindDropDown(By.Id("topic-lessons")).SelectByValue(((int) value).ToString());
             }
         }
 
+        public void  FlexAndPrivate()
+        {
+            var flexOrPrivate=WaitForElement(By.Id("type")).Text;
 
-        public EditCoursePopup SalableOnlyInPackage()
+            if (flexOrPrivate== "Flexible" || flexOrPrivate =="Private")
+            {
+                WaitForElement(By.Id("usage")).Click();
+                new SelectElement(WaitForElement(By.Id("usage']"))).SelectByIndex(2);
+                WaitForElement(By.Id("lesson-default-duration")).Click();
+                new SelectElement(WaitForElement(By.Id("lesson-default-duration']"))).SelectByIndex(5);
+                Save();
+            }
+        }
+    
+
+
+
+    public EditCoursePopup SalableOnlyInPackage()
         {
             WaitForElement(By.Id("courseIsSalableOnlyInPackage")).Click();
             Console.WriteLine("Salable Only In Package option is selected");

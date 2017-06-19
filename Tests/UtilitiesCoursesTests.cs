@@ -13,7 +13,7 @@ namespace BesTests.Tests
     {
         private CoursesPage utilitiesCourses;
 
-        private EditCoursePopup editCoursesPage;
+        //private EditCoursePopup editCoursesPage;
 
         private CourseSection CourseSection => utilitiesCourses.CourseSection;
        // private EditCoursePopup EditCoursePopup => utilitiesCourses.EditCoursePopup.Name;
@@ -92,7 +92,7 @@ namespace BesTests.Tests
         [Test]
         public void EditCourseData()
         {
-            //CourseSection.SearchCourse("private");
+            CourseSection.SearchCourse("vadim");
             var courseRow = CourseSection
                 .Courses
                 .First();
@@ -136,7 +136,7 @@ namespace BesTests.Tests
         [Test]
 
         public void ClickOnCancelButtn()
-        {
+        {           
             var courseRow = CourseSection
                 .Courses
                 .First();
@@ -157,6 +157,20 @@ namespace BesTests.Tests
                 .CheckIfNotSalableIsChecked()
                 .CheckIfSalableOnlyInPackageIsChecked();
 
+        }
+
+        [Test]
+        public void CheckIfFlexOrPrivate()
+        {
+            CourseSection.SearchCourse("private");
+            var courseRow = CourseSection
+                .Courses
+                .First();
+
+            var editCoursePopup = courseRow
+                .EditCourse();
+            editCoursePopup.FlexAndPrivate();
+            Console.WriteLine(editCoursePopup.CourseType);
         }
 
         //[Test]

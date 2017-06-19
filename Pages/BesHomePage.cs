@@ -10,7 +10,7 @@ namespace BesTests.Pages
 {
     public class BesHomePage : BasePage
     {
-        private readonly IWebElement _myName;
+        //private readonly IWebElement _myName;
         private readonly IWebElement _myRow;
         public BesHomePage(IWebDriver driver)
             : base(driver, By.Id("reminders-div"), 10)

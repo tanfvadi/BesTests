@@ -8,7 +8,7 @@ namespace BesTests.Pages.EmploeesPage
   public class EmployeeRowPage : EmployeesPage
   {
      
-        private readonly IWebElement _myRow;
+        //private readonly IWebElement _myRow;
         public IEnumerable<IWebElement> rows;
 
         public EmployeeRowPage(IWebDriver driver)
