@@ -75,22 +75,19 @@ namespace BesTests.Pages.Courses
             }
         }
 
-        public void  FlexAndPrivate()
+        public void FlexAndPrivate()
         {
             var flexOrPrivate=WaitForElement(By.Id("type")).Text;
-
             if (flexOrPrivate== "Flexible" || flexOrPrivate =="Private")
             {
                 WaitForElement(By.Id("usage")).Click();
+                //new SelectElement(WaitForElement(By.Id("usage']"))).SelectByIndex(2);
                 new SelectElement(WaitForElement(By.Id("usage']"))).SelectByIndex(2);
                 WaitForElement(By.Id("lesson-default-duration")).Click();
                 new SelectElement(WaitForElement(By.Id("lesson-default-duration']"))).SelectByIndex(5);
                 Save();
             }
-        }
-    
-
-
+        }    
 
     public EditCoursePopup SalableOnlyInPackage()
         {
