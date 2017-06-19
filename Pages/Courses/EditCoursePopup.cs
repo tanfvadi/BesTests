@@ -80,11 +80,17 @@ namespace BesTests.Pages.Courses
             var flexOrPrivate=WaitForElement(By.Id("type")).Text;
             if (flexOrPrivate== "Flexible" || flexOrPrivate =="Private")
             {
-                WaitForElement(By.Id("usage")).Click();
+                //WaitForElement(By.Id("usage")).Click();
+                var usage = int.Parse(FindDropDown(By.Id("usage")).SelectedOption.GetValue());
+                Console.WriteLine("The usage is: " + usage + " hours");
                 //new SelectElement(WaitForElement(By.Id("usage']"))).SelectByIndex(2);
-                new SelectElement(WaitForElement(By.Id("usage']"))).SelectByIndex(2);
-                WaitForElement(By.Id("lesson-default-duration")).Click();
-                new SelectElement(WaitForElement(By.Id("lesson-default-duration']"))).SelectByIndex(5);
+                //WaitForElement(By.XPath("//select[@id='usage' and value='3']")).Click();
+
+                var duration = int.Parse(FindDropDown(By.Id("lesson-default-duration")).SelectedOption.GetValue());
+                Console.WriteLine("The duration of this course is: " + duration + " minutes");
+
+                //WaitForElement(By.Id("lesson-default-duration")).Click();
+                // new SelectElement(WaitForElement(By.Id("lesson-default-duration']"))).SelectByIndex(5);
                 Save();
             }
         }    
@@ -132,7 +138,7 @@ namespace BesTests.Pages.Courses
         public CourseSection Save()
         {
             WaitForElement(By.Id("save-btn")).Click();
-            WaitForElement(By.ClassName("confirm")).Click();
+            //WaitForElement(By.ClassName("confirm")).Click();
             return new CourseSection(driver);
         }
 

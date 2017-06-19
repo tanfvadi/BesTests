@@ -170,7 +170,7 @@ namespace BesTests.Tests
             var editCoursePopup = courseRow
                 .EditCourse();
             editCoursePopup.FlexAndPrivate();
-            Console.WriteLine(editCoursePopup.CourseType);
+            Console.WriteLine("The course type: " + editCoursePopup.CourseType);
         }
 
         //[Test]
