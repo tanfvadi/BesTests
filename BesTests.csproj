@@ -73,6 +73,16 @@
       <DependentUpon>BesTests.feature</DependentUpon>
     </Compile>
     <Compile Include="BesTestsSteps.cs" />
+    <Compile Include="Pages\PlacementTests\Features\SpecFlowFeature1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlacementTests\Features\SpecFlowFeature2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature2.feature</DependentUpon>
+    </Compile>
     <Compile Include="WebElementExtensions.cs" />
     <Compile Include="Pages\Courses\CourseRow.cs" />
     <Compile Include="Pages\Courses\CourseSection.cs" />
@@ -147,6 +157,14 @@
     </None>
     <None Include="packages.config" />
     <None Include="Pages\Courses\CoursesClassDiagram.cd" />
+    <None Include="Pages\PlacementTests\Features\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Pages\PlacementTests\Features\SpecFlowFeature2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature2.feature.cs</LastGenOutput>
+    </None>
     <None Include="runtests.cmd" />
     <None Include="SpecFlowFeature1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
